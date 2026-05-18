@@ -1,56 +1,122 @@
+
 <!DOCTYPE html>
 <html lang="ro">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Site-ul meu</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    body{
-      margin:0;
-      font-family:Arial,sans-serif;
-      background:#111;
-      color:white;
-      text-align:center;
-    }
+<title>Universul #TAM</title>
 
-    .hero{
-      padding:80px 20px;
-    }
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    h1{
-      font-size:42px;
-      margin-bottom:10px;
-    }
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
 
-    p{
-      font-size:20px;
-      color:#ccc;
-    }
+<style>
 
-    .btn{
-      display:inline-block;
-      margin-top:30px;
-      padding:15px 30px;
-      background:#00bcd4;
-      color:white;
-      text-decoration:none;
-      border-radius:10px;
-      font-size:18px;
-    }
-  </style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:#111;
+    color:white;
+    font-family:Arial,sans-serif;
+}
+
+/* COVER */
+
+.hero{
+    position:relative;
+    height:75vh;
+    background:url('cover.jpg') center center/cover no-repeat;
+    display:flex;
+    align-items:flex-end;
+    justify-content:center;
+}
+
+.overlay{
+    position:absolute;
+    inset:0;
+    background:linear-gradient(
+        to bottom,
+        rgba(0,0,0,0.15),
+        rgba(0,0,0,0.75)
+    );
+}
+
+/* TITLU */
+
+.title{
+    position:relative;
+    z-index:2;
+
+    width:100%;
+    padding:40px 15px;
+
+    text-align:center;
+
+    font-family:'Bebas Neue',sans-serif;
+
+    font-size:15vw;
+    line-height:0.9;
+
+    letter-spacing:4px;
+
+    color:white;
+
+    text-shadow:
+        0 0 10px rgba(0,0,0,0.7),
+        0 0 25px rgba(0,0,0,0.8);
+}
+
+/* CONTINUT */
+
+.content{
+    padding:40px 25px;
+    max-width:900px;
+    margin:auto;
+}
+
+.content h2{
+    font-size:32px;
+    margin-bottom:20px;
+}
+
+.content p{
+    color:#ccc;
+    line-height:1.8;
+    font-size:18px;
+}
+
+</style>
 </head>
 
 <body>
 
-  <div class="hero">
-    <h1>Bine ai venit în universul #TAM !</h1>
-    <p>Se lucrează la un proiect social-media marca #TAM, iar prima parte a acestuia pornește de la deja clasicul ȘOA vs LIL.Stay tuned.</p>
+<section class="hero">
 
-    <a class="btn" href="#">
-      Contact
-    </a>
-  </div>
+    <div class="overlay"></div>
+
+    <div class="title">
+        BINE AI VENIT<br>
+        ÎN UNIVERSUL #TAM
+    </div>
+
+</section>
+
+<section class="content">
+
+    <h2>Începutul</h2>
+
+    <p>
+        Acesta este spațiul unde ideile, gândurile și experiențele
+        prind viață.
+    </p>
+
+</section>
 
 </body>
 </html>
