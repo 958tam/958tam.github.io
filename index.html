@@ -136,6 +136,84 @@ body{
     font-size:18px;
 }
 
+/* FOOTER BANNER */
+
+.footer-banner{
+    position:relative;
+
+    height:160px;
+
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(0,0,0,0.2),
+            rgba(0,0,0,0.8)
+        ),
+        url('footer.png') center center/cover no-repeat;
+}
+
+/* FOOTER */
+
+.footer{
+    background:#0a0a0a;
+
+    text-align:center;
+
+    padding:50px 20px;
+}
+
+.footer-logo{
+    font-family:'Permanent Marker',cursive;
+
+    font-size:34px;
+
+    margin-bottom:18px;
+
+    letter-spacing:2px;
+}
+
+.footer-quote{
+    color:#999;
+
+    font-size:16px;
+
+    line-height:1.8;
+
+    max-width:700px;
+
+    margin:auto auto 35px auto;
+}
+
+.footer-social{
+    display:flex;
+
+    justify-content:center;
+
+    gap:20px;
+
+    margin-bottom:30px;
+}
+
+.footer-social a{
+    color:white;
+
+    font-size:22px;
+
+    transition:0.3s;
+}
+
+.footer-social a:hover{
+    transform:scale(1.2);
+
+    color:#ccc;
+}
+
+.footer-copy{
+    color:#666;
+
+    font-size:14px;
+}
+
 </style>
 </head>
 
@@ -185,6 +263,48 @@ body{
     </p>
 
 </section>
+
+<section class="footer-banner"></section>
+
+<footer class="footer">
+
+    <div class="footer-logo">
+        #TAM Universe
+    </div>
+
+    <div class="footer-quote">
+        Știm că este puțin, dar orice construcție se realizează în timp.
+    </div>
+
+    <div class="footer-social">
+
+        <a href="#">
+            <i class="fab fa-youtube"></i>
+        </a>
+
+        <a href="#">
+            <i class="fab fa-facebook-f"></i>
+        </a>
+
+        <a href="#">
+            <i class="fab fa-tiktok"></i>
+        </a>
+
+        <a href="#">
+            <i class="fab fa-instagram"></i>
+        </a>
+
+        <a href="#">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+
+    </div>
+
+    <div class="footer-copy">
+        © 2026 #TAM
+    </div>
+
+</footer>
 
 </body>
 </html>
