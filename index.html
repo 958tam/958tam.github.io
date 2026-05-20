@@ -146,7 +146,7 @@ body{
     overflow:hidden;
 }
 
-/* CANVAS */
+/* VISUALIZER */
 
 .visualizer-container{
 
@@ -166,7 +166,7 @@ body{
     display:block;
 }
 
-/* MUSIC BUTTON */
+/* BUTTON */
 
 .music-btn{
 
@@ -361,7 +361,7 @@ body{
 
     </button>
 
-    <audio id="bgMusic" loop>
+    <audio id="bgMusic" loop crossorigin="anonymous">
         <source src="music.mp3" type="audio/mpeg">
     </audio>
 
@@ -438,6 +438,9 @@ let audioContext;
 let analyser;
 let source;
 let dataArray;
+let animationId;
+
+/* CANVAS */
 
 function resizeCanvas(){
 
@@ -449,17 +452,13 @@ resizeCanvas();
 
 window.addEventListener("resize", resizeCanvas);
 
+/* AUDIO */
+
 function setupAudio(){
 
     audioContext = new (window.AudioContext || window.webkitAudioContext)();
 
     analyser = audioContext.createAnalyser();
-
-    source = audioContext.createMediaElementSource(music);
-
-    source.connect(analyser);
-
-    analyser.connect(audioContext.destination);
 
     analyser.fftSize = 256;
 
@@ -467,57 +466,65 @@ function setupAudio(){
 
     dataArray = new Uint8Array(bufferLength);
 
-    drawVisualizer();
+    source = audioContext.createMediaElementSource(music);
+
+    source.connect(analyser);
+
+    analyser.connect(audioContext.destination);
 }
+
+/* VISUALIZER */
 
 function drawVisualizer(){
 
-    requestAnimationFrame(drawVisualizer);
+    animationId = requestAnimationFrame(drawVisualizer);
 
     analyser.getByteFrequencyData(dataArray);
 
     ctx.clearRect(0,0,canvas.width,canvas.height);
 
-    const barWidth = 4;
+    const bars = 64;
 
-    const gap = 2;
+    const barWidth = canvas.width / bars;
 
-    let x = 0;
+    for(let i = 0; i < bars; i++){
 
-    for(let i=0;i<dataArray.length;i++){
+        let value = dataArray[i];
 
-        const barHeight = dataArray[i] / 2;
+        let percent = value / 255;
+
+        let height = canvas.height * percent;
+
+        let offset = canvas.height - height;
+
+        let hue = i * 4;
 
         const gradient = ctx.createLinearGradient(
             0,
-            canvas.height,
+            offset,
             0,
-            0
+            canvas.height
         );
 
-        gradient.addColorStop(0,"rgba(0,255,255,0.15)");
-        gradient.addColorStop(0.5,"rgba(0,255,255,0.8)");
-        gradient.addColorStop(1,"rgba(255,255,255,1)");
+        gradient.addColorStop(0,"#ffffff");
+        gradient.addColorStop(0.4,"#00ffff");
+        gradient.addColorStop(1,"rgba(0,255,255,0.05)");
 
         ctx.fillStyle = gradient;
 
-        ctx.shadowBlur = 20;
+        ctx.shadowBlur = 18;
         ctx.shadowColor = "#00ffff";
 
         ctx.fillRect(
-            x,
-            canvas.height - barHeight,
-            barWidth,
-            barHeight
+            i * barWidth,
+            offset,
+            barWidth - 2,
+            height
         );
-
-        x += barWidth + gap;
-
-        if(x > canvas.width){
-            break;
-        }
     }
 }
+
+/* MUSIC TOGGLE */
 
 async function toggleMusic(){
 
@@ -530,7 +537,9 @@ async function toggleMusic(){
 
         await audioContext.resume();
 
-        music.play();
+        await music.play();
+
+        drawVisualizer();
 
         icon.classList.remove("fa-volume-up");
         icon.classList.add("fa-volume-xmark");
@@ -540,6 +549,10 @@ async function toggleMusic(){
     }else{
 
         music.pause();
+
+        cancelAnimationFrame(animationId);
+
+        ctx.clearRect(0,0,canvas.width,canvas.height);
 
         icon.classList.remove("fa-volume-xmark");
         icon.classList.add("fa-volume-up");
