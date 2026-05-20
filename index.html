@@ -205,6 +205,105 @@ body{
     background:rgba(255,0,0,0.25);
 }
 
+/* TILES */
+
+.tiles-section{
+
+    padding:45px 20px;
+
+    max-width:1100px;
+
+    margin:auto;
+}
+
+.tiles-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+
+    gap:22px;
+}
+
+.tile{
+
+    position:relative;
+
+    height:240px;
+
+    border-radius:24px;
+
+    overflow:hidden;
+
+    text-decoration:none;
+
+    background:#1a1a1a;
+
+    transition:0.4s;
+
+    border:1px solid rgba(255,255,255,0.08);
+
+    box-shadow:
+        0 0 20px rgba(0,0,0,0.35);
+}
+
+.tile:hover{
+
+    transform:translateY(-8px) scale(1.02);
+
+    box-shadow:
+        0 0 30px rgba(255,0,0,0.18);
+}
+
+.tile img{
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    transition:0.5s;
+}
+
+.tile:hover img{
+
+    transform:scale(1.08);
+}
+
+.tile-overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+        linear-gradient(
+            to top,
+            rgba(0,0,0,0.88),
+            rgba(0,0,0,0.15)
+        );
+
+    display:flex;
+
+    align-items:flex-end;
+
+    padding:22px;
+}
+
+.tile-title{
+
+    font-size:28px;
+
+    color:white;
+
+    font-family:'Permanent Marker',cursive;
+
+    letter-spacing:1px;
+
+    text-shadow:
+        0 0 10px rgba(0,0,0,0.7);
+}
+
 /* CONTINUT */
 
 .content{
@@ -366,6 +465,30 @@ body{
     <audio id="bgMusic" loop crossorigin="anonymous">
         <source src="music.mp3" type="audio/mpeg">
     </audio>
+
+</section>
+
+<!-- TILES -->
+
+<section class="tiles-section">
+
+    <div class="tiles-grid">
+
+        <a href="desprenoi.html" class="tile">
+
+            <img src="desprenoi.png" alt="Despre noi">
+
+            <div class="tile-overlay">
+
+                <div class="tile-title">
+                    Despre noi
+                </div>
+
+            </div>
+
+        </a>
+
+    </div>
 
 </section>
 
