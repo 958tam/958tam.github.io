@@ -89,6 +89,8 @@ body{
 
     border-top:1px solid rgba(255,255,255,0.08);
     border-bottom:1px solid rgba(255,255,255,0.08);
+
+    flex-wrap:wrap;
 }
 
 .social-bar a{
@@ -115,7 +117,7 @@ body{
 .social-bar a:hover{
     transform:translateY(-5px) scale(1.08);
 
-    background:rgba(255,255,255,0.18);
+    background:rgba(255,0,0,0.25);
 }
 
 /* MUSIC BAR */
@@ -129,9 +131,9 @@ body{
     background:
     linear-gradient(
         to right,
-        rgba(0,255,255,0.08),
+        rgba(255,0,0,0.08),
         rgba(255,255,255,0.02),
-        rgba(0,255,255,0.08)
+        rgba(255,0,0,0.08)
     );
 
     border-top:1px solid rgba(255,255,255,0.08);
@@ -200,7 +202,7 @@ body{
 
     transform:scale(1.08);
 
-    background:rgba(255,255,255,0.15);
+    background:rgba(255,0,0,0.25);
 }
 
 /* CONTINUT */
@@ -293,7 +295,7 @@ body{
 .footer-social a:hover{
     transform:scale(1.2);
 
-    color:#ccc;
+    color:#ff4444;
 }
 
 .footer-copy{
@@ -339,7 +341,7 @@ body{
         <i class="fab fa-x-twitter"></i>
     </a>
 
-    <a href="#">
+    <a href="https://whatsapp.com/channel/0029Vb7raMh1t90jV21u1t3X" target="_blank">
         <i class="fab fa-whatsapp"></i>
     </a>
 
@@ -412,7 +414,7 @@ body{
             <i class="fab fa-x-twitter"></i>
         </a>
 
-        <a href="#">
+        <a href="https://whatsapp.com/channel/0029Vb7raMh1t90jV21u1t3X" target="_blank">
             <i class="fab fa-whatsapp"></i>
         </a>
 
@@ -440,8 +442,6 @@ let source;
 let dataArray;
 let animationId;
 
-/* CANVAS */
-
 function resizeCanvas(){
 
     canvas.width = canvas.offsetWidth;
@@ -451,8 +451,6 @@ function resizeCanvas(){
 resizeCanvas();
 
 window.addEventListener("resize", resizeCanvas);
-
-/* AUDIO */
 
 function setupAudio(){
 
@@ -472,8 +470,6 @@ function setupAudio(){
 
     analyser.connect(audioContext.destination);
 }
-
-/* VISUALIZER */
 
 function drawVisualizer(){
 
@@ -497,8 +493,6 @@ function drawVisualizer(){
 
         let offset = canvas.height - height;
 
-        let hue = i * 4;
-
         const gradient = ctx.createLinearGradient(
             0,
             offset,
@@ -507,13 +501,13 @@ function drawVisualizer(){
         );
 
         gradient.addColorStop(0,"#ffffff");
-        gradient.addColorStop(0.4,"#00ffff");
-        gradient.addColorStop(1,"rgba(0,255,255,0.05)");
+        gradient.addColorStop(0.4,"#ff0000");
+        gradient.addColorStop(1,"rgba(255,0,0,0.05)");
 
         ctx.fillStyle = gradient;
 
         ctx.shadowBlur = 18;
-        ctx.shadowColor = "#00ffff";
+        ctx.shadowColor = "#ff0000";
 
         ctx.fillRect(
             i * barWidth,
@@ -523,8 +517,6 @@ function drawVisualizer(){
         );
     }
 }
-
-/* MUSIC TOGGLE */
 
 async function toggleMusic(){
 
