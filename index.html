@@ -25,6 +25,7 @@ body{
     background:#111;
     color:white;
     font-family:Arial,sans-serif;
+    overflow-x:hidden;
 }
 
 /* COVER */
@@ -115,6 +116,156 @@ body{
     transform:translateY(-5px) scale(1.08);
 
     background:rgba(255,255,255,0.18);
+}
+
+/* MUSIC VISUALIZER */
+
+.music-section{
+    position:relative;
+
+    height:180px;
+
+    overflow:hidden;
+
+    background:
+    radial-gradient(circle at center,
+    rgba(0,255,255,0.12),
+    transparent 60%),
+    linear-gradient(to bottom,
+    #111,
+    #050505);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    flex-direction:column;
+}
+
+.visualizer{
+    display:flex;
+
+    align-items:flex-end;
+
+    gap:6px;
+
+    height:90px;
+
+    z-index:2;
+}
+
+.bar{
+    width:10px;
+
+    border-radius:20px;
+
+    background:linear-gradient(
+        to top,
+        #00ffff,
+        #ffffff
+    );
+
+    animation:beat 1s infinite ease-in-out;
+
+    box-shadow:
+        0 0 10px #00ffff,
+        0 0 25px rgba(0,255,255,0.6);
+}
+
+.bar:nth-child(1){height:25px;animation-delay:0.1s;}
+.bar:nth-child(2){height:60px;animation-delay:0.3s;}
+.bar:nth-child(3){height:40px;animation-delay:0.5s;}
+.bar:nth-child(4){height:80px;animation-delay:0.2s;}
+.bar:nth-child(5){height:50px;animation-delay:0.4s;}
+.bar:nth-child(6){height:90px;animation-delay:0.6s;}
+.bar:nth-child(7){height:45px;animation-delay:0.2s;}
+.bar:nth-child(8){height:70px;animation-delay:0.5s;}
+.bar:nth-child(9){height:35px;animation-delay:0.3s;}
+.bar:nth-child(10){height:85px;animation-delay:0.7s;}
+
+@keyframes beat{
+    0%{
+        transform:scaleY(1);
+    }
+
+    50%{
+        transform:scaleY(1.8);
+    }
+
+    100%{
+        transform:scaleY(1);
+    }
+}
+
+/* GLOW EFFECT */
+
+.music-section::before{
+    content:"";
+
+    position:absolute;
+
+    width:300px;
+    height:300px;
+
+    background:rgba(0,255,255,0.08);
+
+    border-radius:50%;
+
+    filter:blur(60px);
+
+    animation:pulse 4s infinite ease-in-out;
+}
+
+@keyframes pulse{
+    0%{
+        transform:scale(1);
+        opacity:0.5;
+    }
+
+    50%{
+        transform:scale(1.3);
+        opacity:1;
+    }
+
+    100%{
+        transform:scale(1);
+        opacity:0.5;
+    }
+}
+
+/* MUSIC BUTTON */
+
+.music-btn{
+    margin-top:22px;
+
+    z-index:2;
+
+    border:none;
+
+    background:rgba(255,255,255,0.08);
+
+    color:white;
+
+    width:60px;
+    height:60px;
+
+    border-radius:50%;
+
+    font-size:24px;
+
+    cursor:pointer;
+
+    transition:0.3s;
+
+    backdrop-filter:blur(10px);
+}
+
+.music-btn:hover{
+    transform:scale(1.1);
+
+    background:rgba(255,255,255,0.15);
 }
 
 /* CONTINUT */
@@ -259,6 +410,35 @@ body{
 
 </section>
 
+<!-- MUSIC VISUALIZER -->
+
+<section class="music-section">
+
+    <div class="visualizer">
+
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+
+    </div>
+
+    <button class="music-btn" onclick="toggleMusic()">
+        <i id="musicIcon" class="fas fa-volume-up"></i>
+    </button>
+
+    <audio id="bgMusic" loop>
+        <source src="music.mp3" type="audio/mpeg">
+    </audio>
+
+</section>
+
 <section class="content">
 
     <h2>Începutul</h2>
@@ -315,6 +495,37 @@ body{
     </div>
 
 </footer>
+
+<script>
+
+const music = document.getElementById("bgMusic");
+const icon = document.getElementById("musicIcon");
+
+let playing = false;
+
+function toggleMusic(){
+
+    if(!playing){
+
+        music.play();
+
+        icon.classList.remove("fa-volume-up");
+        icon.classList.add("fa-volume-xmark");
+
+        playing = true;
+
+    }else{
+
+        music.pause();
+
+        icon.classList.remove("fa-volume-xmark");
+        icon.classList.add("fa-volume-up");
+
+        playing = false;
+    }
+}
+
+</script>
 
 </body>
 </html>
