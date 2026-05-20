@@ -220,16 +220,26 @@ body{
 
     display:grid;
 
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    grid-template-columns:repeat(2, 1fr);
 
     gap:22px;
+}
+
+/* MOBILE */
+
+@media(max-width:700px){
+
+    .tiles-grid{
+
+        grid-template-columns:1fr;
+    }
 }
 
 .tile{
 
     position:relative;
 
-    height:240px;
+    height:190px;
 
     border-radius:24px;
 
@@ -474,7 +484,7 @@ body{
 
     <div class="tiles-grid">
 
-        <!-- DESPRE NOI -->
+        <!-- TILE 1 -->
 
         <a href="desprenoi.html" class="tile">
 
@@ -490,7 +500,7 @@ body{
 
         </a>
 
-        <!-- BENZI DESENATE -->
+        <!-- TILE 2 -->
 
         <a href="benzidesenate.html" class="tile">
 
