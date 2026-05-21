@@ -585,7 +585,7 @@ body{
 
         <a href="tud.html" class="tile">
 
-            <img src="placeholder.png" alt="Tud">
+            <img src="tud.png" alt="Tud">
 
             <div class="tile-overlay">
 
@@ -601,7 +601,7 @@ body{
 
         <a href="dav.html" class="tile">
 
-            <img src="placeholder.png" alt="Dav">
+            <img src="dav.png" alt="Dav">
 
             <div class="tile-overlay">
 
@@ -617,7 +617,7 @@ body{
 
         <a href="mami.html" class="tile">
 
-            <img src="placeholder.png" alt="Mami">
+            <img src="mami.png" alt="Mami">
 
             <div class="tile-overlay">
 
@@ -633,7 +633,7 @@ body{
 
         <a href="tati.html" class="tile">
 
-            <img src="placeholder.png" alt="Tati">
+            <img src="tati.png" alt="Tati">
 
             <div class="tile-overlay">
 
@@ -704,135 +704,6 @@ body{
     </div>
 
 </footer>
-
-<script>
-
-const music = document.getElementById("bgMusic");
-const icon = document.getElementById("musicIcon");
-
-const canvas = document.getElementById("visualizer");
-const ctx = canvas.getContext("2d");
-
-let playing = false;
-
-let audioContext;
-let analyser;
-let source;
-let dataArray;
-let animationId;
-
-function resizeCanvas(){
-
-    canvas.width = canvas.offsetWidth;
-    canvas.height = canvas.offsetHeight;
-}
-
-resizeCanvas();
-
-window.addEventListener("resize", resizeCanvas);
-
-function setupAudio(){
-
-    audioContext = new (window.AudioContext || window.webkitAudioContext)();
-
-    analyser = audioContext.createAnalyser();
-
-    analyser.fftSize = 256;
-
-    const bufferLength = analyser.frequencyBinCount;
-
-    dataArray = new Uint8Array(bufferLength);
-
-    source = audioContext.createMediaElementSource(music);
-
-    source.connect(analyser);
-
-    analyser.connect(audioContext.destination);
-}
-
-function drawVisualizer(){
-
-    animationId = requestAnimationFrame(drawVisualizer);
-
-    analyser.getByteFrequencyData(dataArray);
-
-    ctx.clearRect(0,0,canvas.width,canvas.height);
-
-    const bars = 64;
-
-    const barWidth = canvas.width / bars;
-
-    for(let i = 0; i < bars; i++){
-
-        let value = dataArray[i];
-
-        let percent = value / 255;
-
-        let height = canvas.height * percent;
-
-        let offset = canvas.height - height;
-
-        const gradient = ctx.createLinearGradient(
-            0,
-            offset,
-            0,
-            canvas.height
-        );
-
-        gradient.addColorStop(0,"#ffffff");
-        gradient.addColorStop(0.4,"#ff0000");
-        gradient.addColorStop(1,"rgba(255,0,0,0.05)");
-
-        ctx.fillStyle = gradient;
-
-        ctx.shadowBlur = 18;
-        ctx.shadowColor = "#ff0000";
-
-        ctx.fillRect(
-            i * barWidth,
-            offset,
-            barWidth - 2,
-            height
-        );
-    }
-}
-
-async function toggleMusic(){
-
-    if(!audioContext){
-
-        setupAudio();
-    }
-
-    if(!playing){
-
-        await audioContext.resume();
-
-        await music.play();
-
-        drawVisualizer();
-
-        icon.classList.remove("fa-volume-up");
-        icon.classList.add("fa-volume-xmark");
-
-        playing = true;
-
-    }else{
-
-        music.pause();
-
-        cancelAnimationFrame(animationId);
-
-        ctx.clearRect(0,0,canvas.width,canvas.height);
-
-        icon.classList.remove("fa-volume-xmark");
-        icon.classList.add("fa-volume-up");
-
-        playing = false;
-    }
-}
-
-</script>
 
 </body>
 </html>
