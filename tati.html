@@ -1,1 +1,215 @@
-<h1>Tati</h1>
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ȘOA vs LIL</title>
+
+<style>
+body{
+    margin:0;
+    overflow:hidden;
+    background:#0b5d1e;
+    font-family:Arial;
+}
+
+#game{
+    width:100vw;
+    height:100vh;
+    position:relative;
+    background:
+    linear-gradient(to bottom,#1d7a2f,#0b5d1e);
+}
+
+#player{
+    width:90px;
+    height:90px;
+    position:absolute;
+    bottom:40px;
+    left:50%;
+    transform:translateX(-50%);
+    font-size:70px;
+    text-align:center;
+}
+
+#enemy{
+    width:90px;
+    height:90px;
+    position:absolute;
+    top:80px;
+    left:40%;
+    font-size:70px;
+}
+
+#ball{
+    width:50px;
+    height:50px;
+    border-radius:50%;
+    background:white;
+    position:absolute;
+    bottom:120px;
+    left:50%;
+    transform:translateX(-50%);
+    box-shadow:0 0 10px black;
+}
+
+#goal{
+    width:300px;
+    height:120px;
+    border:8px solid white;
+    position:absolute;
+    top:10px;
+    left:50%;
+    transform:translateX(-50%);
+}
+
+#score{
+    position:absolute;
+    top:10px;
+    left:10px;
+    color:white;
+    font-size:32px;
+    font-weight:bold;
+}
+
+#message{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    color:yellow;
+    font-size:60px;
+    font-weight:bold;
+    display:none;
+    text-shadow:3px 3px 10px black;
+}
+
+.instructions{
+    position:absolute;
+    bottom:10px;
+    width:100%;
+    text-align:center;
+    color:white;
+    font-size:20px;
+}
+</style>
+</head>
+
+<body>
+
+<div id="game">
+
+<div id="score">SCOR: 0</div>
+
+<div id="goal"></div>
+
+<div id="enemy">🧔</div>
+
+<div id="player">⚽</div>
+
+<div id="ball"></div>
+
+<div id="message">GOOOOL!</div>
+
+<div class="instructions">
+⬅️ ➡️ mișcare | SPACE = șut
+</div>
+
+</div>
+
+<script>
+
+const player = document.getElementById("player");
+const ball = document.getElementById("ball");
+const enemy = document.getElementById("enemy");
+const message = document.getElementById("message");
+const scoreText = document.getElementById("score");
+
+let playerX = window.innerWidth / 2;
+let score = 0;
+
+document.addEventListener("keydown",(e)=>{
+
+    if(e.key==="ArrowLeft"){
+        playerX -= 25;
+    }
+
+    if(e.key==="ArrowRight"){
+        playerX += 25;
+    }
+
+    if(e.key===" "){
+        shoot();
+    }
+
+    player.style.left = playerX + "px";
+    ball.style.left = playerX + "px";
+});
+
+function shoot(){
+
+    let ballY = window.innerHeight - 150;
+
+    let interval = setInterval(()=>{
+
+        ballY -= 20;
+        ball.style.top = ballY + "px";
+
+        if(ballY < 120){
+
+            clearInterval(interval);
+
+            let randomGoal = Math.random();
+
+            if(randomGoal > 0.3){
+
+                score++;
+
+                scoreText.innerHTML = "SCOR: " + score;
+
+                showGoal();
+
+            }else{
+
+                showMiss();
+
+            }
+
+            resetBall();
+        }
+
+    },20);
+}
+
+function resetBall(){
+
+    ball.style.top = "";
+    ball.style.bottom = "120px";
+}
+
+function showGoal(){
+
+    message.innerHTML = "GOOOOL!";
+    message.style.color = "yellow";
+    message.style.display = "block";
+
+    setTimeout(()=>{
+        message.style.display = "none";
+    },1200);
+}
+
+function showMiss(){
+
+    message.innerHTML = "BARĂ!";
+    message.style.color = "red";
+    message.style.display = "block";
+
+    setTimeout(()=>{
+        message.style.display = "none";
+    },1200);
+}
+
+</script>
+
+</body>
+</html>
