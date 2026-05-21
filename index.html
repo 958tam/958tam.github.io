@@ -33,12 +33,12 @@ body{
 .hero{
     position:relative;
 
-    /* marit cu aproximativ inaltimea soundbarului */
-    height:57vh;
+    /* putin mai inalt */
+    height:62vh;
 
     background:
         url('cover.png')
-        center 22%/cover no-repeat;
+        center 14%/cover no-repeat;
 
     display:flex;
     align-items:flex-end;
@@ -63,7 +63,9 @@ body{
     z-index:2;
 
     width:100%;
-    padding:40px 15px;
+
+    /* mutat putin mai jos */
+    padding:40px 15px 55px 15px;
 
     text-align:center;
 
@@ -236,7 +238,6 @@ body{
 
     position:relative;
 
-    /* marit usor */
     height:226px;
 
     border-radius:24px;
@@ -279,7 +280,6 @@ body{
 }
 
 /* DESPRE NOI TILE */
-/* se vede putin mai jos */
 
 .tile-despre img{
 
@@ -287,7 +287,6 @@ body{
 }
 
 /* BENZI DESENATE TILE */
-/* taiere echilibrata sus/jos */
 
 .tile-benzi img{
 
@@ -311,7 +310,9 @@ body{
 
     align-items:flex-end;
 
-    padding:22px;
+    justify-content:center;
+
+    padding:18px 18px 12px 18px;
 }
 
 .tile-title{
@@ -325,6 +326,8 @@ body{
     letter-spacing:1px;
 
     line-height:1.2;
+
+    text-align:center;
 
     text-shadow:
         0 0 10px rgba(0,0,0,0.7);
@@ -354,8 +357,8 @@ body{
 .footer-banner{
     position:relative;
 
-    /* marit considerabil */
-    height:376px;
+    /* si mai inalt */
+    height:448px;
 
     background:
         linear-gradient(
@@ -364,7 +367,7 @@ body{
             rgba(0,0,0,0.8)
         ),
         url('footer.png')
-        center center/cover no-repeat;
+        center 35%/cover no-repeat;
 }
 
 /* FOOTER */
@@ -444,6 +447,8 @@ body{
 
     .title{
         font-size:9vw;
+
+        padding:40px 15px;
     }
 
     .tiles-grid{
@@ -473,6 +478,8 @@ body{
     .footer-banner{
 
         height:160px;
+
+        background-position:center center;
     }
 }
 
