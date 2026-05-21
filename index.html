@@ -34,8 +34,9 @@ body{
     position:relative;
     height:45vh;
 
-    background:url('cover.png') center center no-repeat;
-    background-size:cover;
+    background:
+        url('cover.png')
+        center 30%/cover no-repeat;
 
     display:flex;
     align-items:flex-end;
@@ -240,7 +241,7 @@ body{
 
     text-decoration:none;
 
-    background:#000;
+    background:#1a1a1a;
 
     transition:0.4s;
 
@@ -265,14 +266,26 @@ body{
 
     object-fit:cover;
 
-    display:block;
-
     transition:0.5s;
 }
 
 .tile:hover img{
 
     transform:scale(1.08);
+}
+
+/* DESPRE NOI TILE */
+
+.tile-despre img{
+
+    object-position:center 38%;
+}
+
+/* BENZI DESENATE TILE */
+
+.tile-benzi img{
+
+    object-position:center 15%;
 }
 
 .tile-overlay{
@@ -335,7 +348,7 @@ body{
 .footer-banner{
     position:relative;
 
-    height:160px;
+    height:190px;
 
     background:
         linear-gradient(
@@ -343,9 +356,8 @@ body{
             rgba(0,0,0,0.2),
             rgba(0,0,0,0.8)
         ),
-        url('footer.png') center center no-repeat;
-
-    background-size:cover;
+        url('footer.png')
+        center 42%/cover no-repeat;
 }
 
 /* FOOTER */
@@ -443,48 +455,10 @@ body{
 
         padding:14px;
     }
-}
-
-/* DESKTOP IMAGE FIX */
-
-@media(min-width:1000px){
-
-    /* HERO */
-
-    .hero{
-
-        height:70vh;
-
-        background-size:contain;
-
-        background-color:#000;
-    }
-
-    /* FOOTER BANNER */
 
     .footer-banner{
 
-        background-size:contain;
-
-        background-repeat:no-repeat;
-
-        background-position:center;
-
-        background-color:#000;
-    }
-
-    /* TILES */
-
-    .tile{
-
-        height:320px;
-    }
-
-    .tile img{
-
-        object-fit:contain;
-
-        background:#000;
+        height:160px;
     }
 }
 
@@ -561,7 +535,7 @@ body{
 
         <!-- TILE 1 -->
 
-        <a href="desprenoi.html" class="tile">
+        <a href="desprenoi.html" class="tile tile-despre">
 
             <img src="desprenoi.png" alt="Despre noi">
 
@@ -577,7 +551,7 @@ body{
 
         <!-- TILE 2 -->
 
-        <a href="benzidesenate.html" class="tile">
+        <a href="benzidesenate.html" class="tile tile-benzi">
 
             <img src="benzidesenate.png" alt="Benzi desenate">
 
