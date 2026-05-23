@@ -317,7 +317,7 @@ body{
 
     object-fit:cover;
 
-    object-position:center 11%;
+    object-position:center 16%;
 
     transition:0.5s;
 }
@@ -501,7 +501,7 @@ body{
 
     .tile img{
 
-        object-position:center 11%;
+        object-position:center 16%;
     }
 
     .tile-title{
@@ -634,8 +634,6 @@ body{
 
     <div class="tiles-grid">
 
-        <!-- TUD -->
-
         <a href="tud.html" class="tile">
 
             <img src="tud.png" alt="Tud">
@@ -649,8 +647,6 @@ body{
             </div>
 
         </a>
-
-        <!-- DAV -->
 
         <a href="dav.html" class="tile">
 
@@ -666,8 +662,6 @@ body{
 
         </a>
 
-        <!-- MAMI -->
-
         <a href="mami.html" class="tile">
 
             <img src="mami.png" alt="Mami">
@@ -681,8 +675,6 @@ body{
             </div>
 
         </a>
-
-        <!-- TATI -->
 
         <a href="tati.html" class="tile">
 
@@ -779,6 +771,8 @@ let source;
 let dataArray;
 let animationId;
 
+let autoStarted = false;
+
 function resizeCanvas(){
 
     canvas.width = canvas.offsetWidth;
@@ -855,6 +849,36 @@ function drawVisualizer(){
     }
 }
 
+async function startMusic(){
+
+    if(autoStarted) return;
+
+    autoStarted = true;
+
+    if(!audioContext){
+
+        setupAudio();
+    }
+
+    try{
+
+        await audioContext.resume();
+
+        await music.play();
+
+        drawVisualizer();
+
+        icon.classList.remove("fa-volume-up");
+        icon.classList.add("fa-volume-xmark");
+
+        playing = true;
+
+    }catch(err){
+
+        console.log("Autoplay blocat:", err);
+    }
+}
+
 async function toggleMusic(){
 
     if(!audioContext){
@@ -875,6 +899,8 @@ async function toggleMusic(){
 
         playing = true;
 
+        autoStarted = true;
+
     }else{
 
         music.pause();
@@ -889,6 +915,24 @@ async function toggleMusic(){
         playing = false;
     }
 }
+
+document.addEventListener(
+    "click",
+    startMusic,
+    { once:true }
+);
+
+document.addEventListener(
+    "scroll",
+    startMusic,
+    { once:true }
+);
+
+document.addEventListener(
+    "touchstart",
+    startMusic,
+    { once:true }
+);
 
 </script>
 
