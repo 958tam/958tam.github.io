@@ -33,7 +33,6 @@ body{
 .hero{
     position:relative;
 
-    /* putin mai inalt */
     height:62vh;
 
     background:
@@ -64,7 +63,6 @@ body{
 
     width:100%;
 
-    /* mutat putin mai jos */
     padding:40px 15px 55px 15px;
 
     text-align:center;
@@ -357,7 +355,6 @@ body{
 .footer-banner{
     position:relative;
 
-    /* si mai inalt */
     height:448px;
 
     background:
@@ -739,6 +736,51 @@ function drawVisualizer(){
     }
 }
 
+async function startMusic(){
+
+    try{
+
+        if(!audioContext){
+
+            setupAudio();
+        }
+
+        await audioContext.resume();
+
+        music.volume = 0;
+
+        await music.play();
+
+        drawVisualizer();
+
+        icon.classList.remove("fa-volume-up");
+        icon.classList.add("fa-volume-xmark");
+
+        playing = true;
+
+        let volume = 0;
+
+        const fade = setInterval(()=>{
+
+            volume += 0.05;
+
+            if(volume >= 1){
+
+                volume = 1;
+
+                clearInterval(fade);
+            }
+
+            music.volume = volume;
+
+        },120);
+
+    }catch(err){
+
+        console.log("Autoplay blocat de browser");
+    }
+}
+
 async function toggleMusic(){
 
     if(!audioContext){
@@ -773,6 +815,24 @@ async function toggleMusic(){
         playing = false;
     }
 }
+
+/* AUTOPLAY */
+
+window.addEventListener("load", ()=>{
+
+    startMusic();
+});
+
+/* FALLBACK MOBILE */
+
+document.addEventListener("click", ()=>{
+
+    if(!playing){
+
+        startMusic();
+    }
+
+},{ once:true });
 
 </script>
 
