@@ -1,1 +1,534 @@
-<h1>TUD</h1>
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Tud | #TAM Universe</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:#111;
+    color:white;
+    font-family:Arial,sans-serif;
+    overflow-x:hidden;
+}
+
+/* HERO */
+
+.hero{
+
+    position:relative;
+
+    height:60vh;
+
+    background:
+        url('tud.png')
+        center 16%/cover no-repeat;
+
+    display:flex;
+
+    align-items:flex-end;
+
+    justify-content:center;
+}
+
+.overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(0,0,0,0.15),
+            rgba(0,0,0,0.82)
+        );
+}
+
+.hero-content{
+
+    position:relative;
+
+    z-index:2;
+
+    text-align:center;
+
+    padding:40px 20px 60px 20px;
+}
+
+.hero-title{
+
+    font-family:'Permanent Marker',cursive;
+
+    font-size:58px;
+
+    letter-spacing:2px;
+
+    text-shadow:
+        0 0 20px rgba(0,0,0,0.8);
+}
+
+.hero-subtitle{
+
+    margin-top:10px;
+
+    font-size:18px;
+
+    color:#ddd;
+
+    letter-spacing:1px;
+
+    text-shadow:
+        0 0 10px rgba(0,0,0,0.7);
+}
+
+/* BACK BUTTON */
+
+.back-section{
+
+    padding:22px 20px;
+
+    background:#121212;
+
+    border-top:1px solid rgba(255,255,255,0.05);
+
+    border-bottom:1px solid rgba(255,255,255,0.05);
+}
+
+.back-btn{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    text-decoration:none;
+
+    color:white;
+
+    padding:12px 18px;
+
+    border-radius:14px;
+
+    background:rgba(255,255,255,0.06);
+
+    transition:0.3s;
+
+    font-size:15px;
+}
+
+.back-btn:hover{
+
+    background:rgba(255,0,0,0.18);
+
+    transform:translateX(-4px);
+}
+
+/* CONTENT */
+
+.content-section{
+
+    padding:80px 25px 50px 25px;
+
+    max-width:950px;
+
+    margin:auto;
+
+    text-align:center;
+}
+
+.content-title{
+
+    font-family:'Permanent Marker',cursive;
+
+    font-size:34px;
+
+    margin-bottom:28px;
+
+    letter-spacing:1px;
+}
+
+.content-text{
+
+    color:#cfcfcf;
+
+    line-height:1.9;
+
+    font-size:18px;
+
+    max-width:800px;
+
+    margin:auto;
+}
+
+/* VIDEO SECTION */
+
+.video-section{
+
+    padding:20px 25px 90px 25px;
+
+    max-width:1100px;
+
+    margin:auto;
+}
+
+.video-frame{
+
+    position:relative;
+
+    width:100%;
+
+    aspect-ratio:16/9;
+
+    border-radius:28px;
+
+    overflow:hidden;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,0,0,0.15),
+            rgba(255,255,255,0.03)
+        );
+
+    border:1px solid rgba(255,255,255,0.08);
+
+    box-shadow:
+        0 0 35px rgba(0,0,0,0.4);
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+}
+
+.video-placeholder{
+
+    text-align:center;
+
+    padding:30px;
+}
+
+.video-placeholder i{
+
+    font-size:70px;
+
+    color:#ff2d2d;
+
+    margin-bottom:20px;
+
+    text-shadow:
+        0 0 20px rgba(255,0,0,0.5);
+}
+
+.video-placeholder h2{
+
+    font-family:'Permanent Marker',cursive;
+
+    font-size:30px;
+
+    margin-bottom:16px;
+
+    letter-spacing:1px;
+}
+
+.video-placeholder p{
+
+    color:#bfbfbf;
+
+    font-size:17px;
+
+    line-height:1.8;
+
+    max-width:600px;
+}
+
+/* FOOTER */
+
+.footer{
+
+    background:#0a0a0a;
+
+    text-align:center;
+
+    padding:50px 20px;
+}
+
+.footer-logo{
+
+    font-family:'Permanent Marker',cursive;
+
+    font-size:34px;
+
+    margin-bottom:18px;
+
+    letter-spacing:2px;
+}
+
+.footer-logo .red-a{
+
+    color:#ff2d2d;
+
+    text-shadow:
+        0 0 12px rgba(255,0,0,0.7);
+}
+
+.footer-quote{
+
+    color:#999;
+
+    font-size:16px;
+
+    line-height:1.8;
+
+    max-width:700px;
+
+    margin:auto auto 35px auto;
+}
+
+.footer-social{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:20px;
+
+    margin-bottom:30px;
+
+    flex-wrap:wrap;
+}
+
+.footer-social a{
+
+    color:white;
+
+    font-size:22px;
+
+    transition:0.3s;
+}
+
+.footer-social a:hover{
+
+    transform:scale(1.2);
+
+    color:#ff4444;
+}
+
+.footer-copy{
+
+    color:#666;
+
+    font-size:14px;
+}
+
+/* MOBILE */
+
+@media(max-width:700px){
+
+    .hero{
+
+        height:52vh;
+
+        background-position:center 12%;
+    }
+
+    .hero-title{
+
+        font-size:42px;
+    }
+
+    .hero-subtitle{
+
+        font-size:15px;
+    }
+
+    .content-section{
+
+        padding:60px 22px 40px 22px;
+    }
+
+    .content-title{
+
+        font-size:28px;
+    }
+
+    .content-text{
+
+        font-size:16px;
+    }
+
+    .video-placeholder i{
+
+        font-size:54px;
+    }
+
+    .video-placeholder h2{
+
+        font-size:24px;
+    }
+
+    .video-placeholder p{
+
+        font-size:15px;
+    }
+
+    .video-frame{
+
+        border-radius:22px;
+    }
+
+    .footer-logo{
+
+        font-size:28px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+
+<section class="hero">
+
+    <div class="overlay"></div>
+
+    <div class="hero-content">
+
+        <div class="hero-title">
+            TUD
+        </div>
+
+        <div class="hero-subtitle">
+            Parte din Universul #TAM
+        </div>
+
+    </div>
+
+</section>
+
+<!-- BACK -->
+
+<section class="back-section">
+
+    <a href="desprenoi.html" class="back-btn">
+
+        <i class="fas fa-arrow-left"></i>
+
+        Înapoi
+
+    </a>
+
+</section>
+
+<!-- CONTENT -->
+
+<section class="content-section">
+
+    <div class="content-title">
+        Povestea lui Tud
+    </div>
+
+    <div class="content-text">
+
+        Aici va veni un scurt text despre Tud.
+        Un spațiu pentru energie, personalitate,
+        aventură și momente din Universul #TAM.
+
+    </div>
+
+</section>
+
+<!-- VIDEO -->
+
+<section class="video-section">
+
+    <div class="video-frame">
+
+        <div class="video-placeholder">
+
+            <i class="fab fa-youtube"></i>
+
+            <h2>
+                Video în curând
+            </h2>
+
+            <p>
+                Aici va fi integrat videoclipul YouTube.
+                Chenarul este deja pregătit pentru embed.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer class="footer">
+
+    <div class="footer-logo">
+        #T<span class="red-a">A</span>M Universe
+    </div>
+
+    <div class="footer-quote">
+        Știm că este puțin, dar orice construcție se realizează în timp.
+    </div>
+
+    <div class="footer-social">
+
+        <a href="https://youtube.com/@tam958universe?si=tH4ilL0TK9Gzuht8" target="_blank">
+            <i class="fab fa-youtube"></i>
+        </a>
+
+        <a href="https://www.facebook.com/share/18qTg2ix7w/" target="_blank">
+            <i class="fab fa-facebook-f"></i>
+        </a>
+
+        <a href="https://www.tiktok.com/@tam.universe?_r=1&_t=ZN-96V6I3qpKKc" target="_blank">
+            <i class="fab fa-tiktok"></i>
+        </a>
+
+        <a href="https://www.instagram.com/958.tam.fam?igsh=MWE1OWh0eWlubDBuMw==" target="_blank">
+            <i class="fab fa-instagram"></i>
+        </a>
+
+        <a href="https://x.com/TAM958Universe" target="_blank">
+            <i class="fab fa-x-twitter"></i>
+        </a>
+
+        <a href="https://whatsapp.com/channel/0029Vb7raMh1t90jV21u1t3X" target="_blank">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+
+    </div>
+
+    <div class="footer-copy">
+        © 2026 #TAM
+    </div>
+
+</footer>
+
+</body>
+</html>
