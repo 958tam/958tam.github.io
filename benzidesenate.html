@@ -317,6 +317,8 @@ body{
         0 0 35px rgba(255,0,0,0.18);
 }
 
+/* IMAGINE TILE */
+
 .tile img{
 
     width:100%;
@@ -324,6 +326,7 @@ body{
 
     object-fit:cover;
 
+    /* taiem doar putin din partea de jos */
     object-position:center top;
 
     transition:0.5s;
@@ -394,6 +397,9 @@ body{
     margin:auto;
 
     line-height:1.7;
+
+    text-shadow:
+        0 0 18px rgba(255,0,0,0.12);
 }
 
 .quote-author{
@@ -429,12 +435,19 @@ body{
     letter-spacing:2px;
 }
 
+/* T */
+
 .footer-logo .black-t{
 
     color:#000;
 
     -webkit-text-stroke:1px #fff;
+
+    text-shadow:
+        0 0 10px rgba(255,255,255,0.3);
 }
+
+/* A */
 
 .footer-logo .split-a{
 
@@ -449,11 +462,18 @@ body{
     -webkit-background-clip:text;
 
     -webkit-text-fill-color:transparent;
+
+    text-shadow:none;
 }
+
+/* M */
 
 .footer-logo .pink-m{
 
     color:#ff4fa3;
+
+    text-shadow:
+        0 0 14px rgba(255,79,163,0.45);
 }
 
 .footer-quote{
@@ -528,14 +548,48 @@ body{
         line-height:1.6;
     }
 
+    .content-section{
+
+        padding:60px 22px 40px 22px;
+    }
+
+    .content-title{
+
+        font-size:28px;
+    }
+
+    .content-text{
+
+        font-size:16px;
+    }
+
     .tiles-grid{
 
         grid-template-columns:1fr;
+
+        gap:18px;
     }
 
     .tile{
 
         height:190px;
+
+        border-radius:22px;
+    }
+
+    .tile-title{
+
+        font-size:20px;
+    }
+
+    .quote{
+
+        font-size:24px;
+    }
+
+    .quote-author{
+
+        font-size:15px;
     }
 
     .footer-logo{
@@ -548,6 +602,8 @@ body{
 </head>
 
 <body>
+
+<!-- HERO -->
 
 <section class="hero">
 
@@ -567,6 +623,8 @@ body{
 
 </section>
 
+<!-- BACK -->
+
 <section class="back-section">
 
     <a href="index.html" class="back-btn">
@@ -579,6 +637,8 @@ body{
 
 </section>
 
+<!-- MUSIC BAR -->
+
 <section class="music-section">
 
     <div class="visualizer-container">
@@ -589,17 +649,19 @@ body{
 
     <button class="music-btn" onclick="toggleMusic()">
 
-        <i id="musicIcon" class="fas fa-volume-up"></i>
+        <i id="musicIcon" class="fas fa-volume-xmark"></i>
 
     </button>
 
-    <audio id="bgMusic" loop crossorigin="anonymous">
+    <audio id="bgMusic" loop autoplay crossorigin="anonymous">
 
         <source src="benzidesenate.mp3" type="audio/mpeg">
 
     </audio>
 
 </section>
+
+<!-- CONTENT -->
 
 <section class="content-section">
 
@@ -610,11 +672,14 @@ body{
     <div class="content-text">
 
         Aici va veni textul introductiv pentru secțiunea
-        de benzi desenate.
+        de benzi desenate. Un spațiu pentru imaginație,
+        aventură și povești din Universul #TAM.
 
     </div>
 
 </section>
+
+<!-- TILES -->
 
 <section class="tiles-section">
 
@@ -638,6 +703,8 @@ body{
 
 </section>
 
+<!-- QUOTE -->
+
 <section class="quote-section">
 
     <div class="quote">
@@ -650,6 +717,8 @@ body{
 
 </section>
 
+<!-- FOOTER -->
+
 <footer class="footer">
 
     <div class="footer-logo">
@@ -658,6 +727,34 @@ body{
 
     <div class="footer-quote">
         Știm că este puțin, dar orice construcție se realizează în timp.
+    </div>
+
+    <div class="footer-social">
+
+        <a href="https://youtube.com/@tam958universe?si=tH4ilL0TK9Gzuht8" target="_blank">
+            <i class="fab fa-youtube"></i>
+        </a>
+
+        <a href="https://www.facebook.com/share/18qTg2ix7w/" target="_blank">
+            <i class="fab fa-facebook-f"></i>
+        </a>
+
+        <a href="https://www.tiktok.com/@tam.universe?_r=1&_t=ZN-96V6I3qpKKc" target="_blank">
+            <i class="fab fa-tiktok"></i>
+        </a>
+
+        <a href="https://www.instagram.com/958.tam.fam?igsh=MWE1OWh0eWlubDBuMw==" target="_blank">
+            <i class="fab fa-instagram"></i>
+        </a>
+
+        <a href="https://x.com/TAM958Universe" target="_blank">
+            <i class="fab fa-x-twitter"></i>
+        </a>
+
+        <a href="https://whatsapp.com/channel/0029Vb7raMh1t90jV21u1t3X" target="_blank">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+
     </div>
 
     <div class="footer-copy">
@@ -674,7 +771,7 @@ const icon = document.getElementById("musicIcon");
 const canvas = document.getElementById("visualizer");
 const ctx = canvas.getContext("2d");
 
-let playing = false;
+let playing = true;
 
 let audioContext;
 let analyser;
@@ -694,12 +791,7 @@ window.addEventListener("resize", resizeCanvas);
 
 function setupAudio(){
 
-    if(audioContext) return;
-
-    audioContext = new (
-        window.AudioContext ||
-        window.webkitAudioContext
-    )();
+    audioContext = new (window.AudioContext || window.webkitAudioContext)();
 
     analyser = audioContext.createAnalyser();
 
@@ -763,22 +855,17 @@ function drawVisualizer(){
     }
 }
 
-async function startMusic(){
+async function initMusic(){
 
     try{
 
         setupAudio();
 
-        await audioContext.resume();
-
         music.volume = 0.85;
 
+        await audioContext.resume();
+
         await music.play();
-
-        playing = true;
-
-        icon.classList.remove("fa-volume-up");
-        icon.classList.add("fa-volume-xmark");
 
         drawVisualizer();
 
@@ -793,12 +880,15 @@ async function startMusic(){
 
 window.addEventListener("load", () => {
 
-    startMusic();
+    initMusic();
 });
 
 async function toggleMusic(){
 
-    setupAudio();
+    if(!audioContext){
+
+        setupAudio();
+    }
 
     if(playing){
 
@@ -832,7 +922,16 @@ document.addEventListener("click", async () => {
 
     if(!playing){
 
-        await startMusic();
+        try{
+
+            await initMusic();
+
+            playing = true;
+
+            icon.classList.remove("fa-volume-up");
+            icon.classList.add("fa-volume-xmark");
+
+        }catch(e){}
     }
 
 }, { once:true });
