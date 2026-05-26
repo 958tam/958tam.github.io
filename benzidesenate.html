@@ -38,7 +38,7 @@ body{
 
     background:
         url('benzidesenate.png')
-        center 32%/cover no-repeat;
+        center 20%/cover no-repeat;
 
     display:flex;
 
@@ -54,12 +54,14 @@ body{
     inset:0;
 
     background:
-        linear-gradient(
-            to bottom,
-            rgba(0,0,0,0.15),
-            rgba(0,0,0,0.82)
-        );
+    linear-gradient(
+        to bottom,
+        rgba(0,0,0,0.18),
+        rgba(0,0,0,0.86)
+    );
 }
+
+/* HERO CONTENT */
 
 .hero-content{
 
@@ -85,20 +87,19 @@ body{
     margin-bottom:12px;
 
     text-shadow:
-        0 0 18px rgba(0,0,0,0.8),
-        0 0 30px rgba(0,0,0,0.7);
+        0 0 20px rgba(0,0,0,0.85);
 }
 
 .hero-subtitle{
 
     font-size:18px;
 
-    color:#ddd;
+    color:#e6e6e6;
 
     letter-spacing:1px;
 
     text-shadow:
-        0 0 10px rgba(0,0,0,0.75);
+        0 0 12px rgba(0,0,0,0.8);
 }
 
 /* BACK BUTTON */
@@ -157,7 +158,7 @@ body{
         to right,
         rgba(255,0,0,0.08),
         rgba(255,255,255,0.02),
-        rgba(255,215,0,0.08)
+        rgba(255,0,0,0.08)
     );
 
     border-top:1px solid rgba(255,255,255,0.08);
@@ -192,7 +193,7 @@ body{
     display:block;
 }
 
-/* BUTTON */
+/* MUSIC BUTTON */
 
 .music-btn{
 
@@ -233,7 +234,7 @@ body{
 
 .content-section{
 
-    padding:80px 25px 40px 25px;
+    padding:80px 25px 50px 25px;
 
     max-width:950px;
 
@@ -246,7 +247,7 @@ body{
 
     font-family:'Permanent Marker',cursive;
 
-    font-size:36px;
+    font-size:34px;
 
     margin-bottom:26px;
 
@@ -255,11 +256,11 @@ body{
 
 .content-text{
 
-    color:#d2d2d2;
-
-    font-size:19px;
+    color:#d0d0d0;
 
     line-height:1.9;
+
+    font-size:18px;
 
     max-width:780px;
 
@@ -270,7 +271,7 @@ body{
 
 .tiles-section{
 
-    padding:20px 20px 60px 20px;
+    padding:10px 20px 70px 20px;
 
     max-width:1100px;
 
@@ -290,9 +291,9 @@ body{
 
     position:relative;
 
-    height:230px;
+    height:250px;
 
-    border-radius:24px;
+    border-radius:26px;
 
     overflow:hidden;
 
@@ -305,7 +306,7 @@ body{
     border:1px solid rgba(255,255,255,0.08);
 
     box-shadow:
-        0 0 20px rgba(0,0,0,0.35);
+        0 0 25px rgba(0,0,0,0.35);
 }
 
 .tile:hover{
@@ -316,6 +317,8 @@ body{
         0 0 35px rgba(255,0,0,0.18);
 }
 
+/* IMAGINE TILE */
+
 .tile img{
 
     width:100%;
@@ -323,14 +326,15 @@ body{
 
     object-fit:cover;
 
-    object-position:center center;
+    /* taiem doar putin din partea de jos */
+    object-position:center top;
 
     transition:0.5s;
 }
 
 .tile:hover img{
 
-    transform:scale(1.08);
+    transform:scale(1.05);
 }
 
 .tile-overlay{
@@ -340,11 +344,11 @@ body{
     inset:0;
 
     background:
-        linear-gradient(
-            to top,
-            rgba(0,0,0,0.9),
-            rgba(0,0,0,0.12)
-        );
+    linear-gradient(
+        to top,
+        rgba(0,0,0,0.92),
+        rgba(0,0,0,0.12)
+    );
 
     display:flex;
 
@@ -352,14 +356,14 @@ body{
 
     justify-content:center;
 
-    padding:18px 18px 14px 18px;
+    padding:20px 18px 14px 18px;
 }
 
 .tile-title{
 
     font-family:'Permanent Marker',cursive;
 
-    font-size:22px;
+    font-size:24px;
 
     color:white;
 
@@ -368,34 +372,34 @@ body{
     letter-spacing:1px;
 
     text-shadow:
-        0 0 10px rgba(0,0,0,0.8);
+        0 0 14px rgba(0,0,0,0.8);
 }
 
 /* QUOTE */
 
 .quote-section{
 
-    padding:40px 25px 90px 25px;
+    padding:10px 25px 90px 25px;
 
     text-align:center;
 }
 
 .quote{
 
-    font-size:34px;
+    font-size:32px;
 
     font-style:italic;
 
     color:#ddd;
 
-    max-width:900px;
+    max-width:850px;
 
     margin:auto;
 
     line-height:1.7;
 
     text-shadow:
-        0 0 20px rgba(255,0,0,0.12);
+        0 0 18px rgba(255,0,0,0.12);
 }
 
 .quote-author{
@@ -403,8 +407,6 @@ body{
     margin-top:22px;
 
     font-size:18px;
-
-    font-style:italic;
 
     color:#999;
 
@@ -435,24 +437,24 @@ body{
 
 /* T */
 
-.footer-logo .t-letter{
+.footer-logo .black-t{
 
     color:#000;
 
-    -webkit-text-stroke:0.8px #ffffff;
+    -webkit-text-stroke:1px #fff;
 
     text-shadow:
-        0 0 10px rgba(255,255,255,0.35);
+        0 0 10px rgba(255,255,255,0.3);
 }
 
 /* A */
 
-.footer-logo .a-letter{
+.footer-logo .split-a{
 
     background:linear-gradient(
         to right,
-        #ffd700 0%,
-        #ffd700 50%,
+        #ffd400 0%,
+        #ffd400 50%,
         #ff2d2d 50%,
         #ff2d2d 100%
     );
@@ -461,13 +463,12 @@ body{
 
     -webkit-text-fill-color:transparent;
 
-    text-shadow:
-        0 0 12px rgba(255,100,0,0.2);
+    text-shadow:none;
 }
 
 /* M */
 
-.footer-logo .m-letter{
+.footer-logo .pink-m{
 
     color:#ff4fa3;
 
@@ -530,24 +531,26 @@ body{
 
     .hero{
 
-        height:50vh;
+        height:52vh;
 
         background-position:center center;
     }
 
     .hero-title{
 
-        font-size:40px;
+        font-size:42px;
     }
 
     .hero-subtitle{
 
         font-size:15px;
+
+        line-height:1.6;
     }
 
     .content-section{
 
-        padding:60px 22px 30px 22px;
+        padding:60px 22px 40px 22px;
     }
 
     .content-title{
@@ -562,19 +565,21 @@ body{
 
     .tiles-grid{
 
-        gap:14px;
+        grid-template-columns:1fr;
+
+        gap:18px;
     }
 
     .tile{
 
-        height:165px;
+        height:190px;
 
-        border-radius:18px;
+        border-radius:22px;
     }
 
     .tile-title{
 
-        font-size:16px;
+        font-size:20px;
     }
 
     .quote{
@@ -648,7 +653,7 @@ body{
 
     </button>
 
-    <audio id="bgMusic" loop autoplay muted playsinline crossorigin="anonymous">
+    <audio id="bgMusic" loop autoplay crossorigin="anonymous">
 
         <source src="benzidesenate.mp3" type="audio/mpeg">
 
@@ -666,8 +671,9 @@ body{
 
     <div class="content-text">
 
-        Aici va apărea textul introductiv pentru secțiunea de benzi desenate.
-        Un spațiu pentru imaginație, aventură și povești create în Universul #TAM.
+        Aici va veni textul introductiv pentru secțiunea
+        de benzi desenate. Un spațiu pentru imaginație,
+        aventură și povești din Universul #TAM.
 
     </div>
 
@@ -681,12 +687,12 @@ body{
 
         <a href="soavslil.html" class="tile">
 
-            <img src="soavslil0.png" alt="ȘOA vs LIL">
+            <img src="soavslil0.png" alt="SOA vs LIL">
 
             <div class="tile-overlay">
 
                 <div class="tile-title">
-                    ȘOA vs LIL
+                    SOA vs LIL
                 </div>
 
             </div>
@@ -702,7 +708,7 @@ body{
 <section class="quote-section">
 
     <div class="quote">
-        “Aici va veni un citat.”
+        Aici va veni un citat.
     </div>
 
     <div class="quote-author">
@@ -716,10 +722,7 @@ body{
 <footer class="footer">
 
     <div class="footer-logo">
-        <span class="t-letter">T</span>
-        <span class="a-letter">A</span>
-        <span class="m-letter">M</span>
-        Universe
+        #<span class="black-t">T</span><span class="split-a">A</span><span class="pink-m">M</span> Universe
     </div>
 
     <div class="footer-quote">
@@ -768,7 +771,7 @@ const icon = document.getElementById("musicIcon");
 const canvas = document.getElementById("visualizer");
 const ctx = canvas.getContext("2d");
 
-let playing = false;
+let playing = true;
 
 let audioContext;
 let analyser;
@@ -835,14 +838,13 @@ function drawVisualizer(){
         );
 
         gradient.addColorStop(0,"#ffffff");
-        gradient.addColorStop(0.4,"#ff2d2d");
-        gradient.addColorStop(0.75,"#ffd700");
+        gradient.addColorStop(0.4,"#ff0000");
         gradient.addColorStop(1,"rgba(255,0,0,0.05)");
 
         ctx.fillStyle = gradient;
 
         ctx.shadowBlur = 18;
-        ctx.shadowColor = "#ff2d2d";
+        ctx.shadowColor = "#ff0000";
 
         ctx.fillRect(
             i * barWidth,
@@ -853,33 +855,33 @@ function drawVisualizer(){
     }
 }
 
-async function startMusic(){
-
-    if(!audioContext){
-
-        setupAudio();
-    }
+async function initMusic(){
 
     try{
 
-        await audioContext.resume();
+        setupAudio();
 
-        music.muted = false;
+        music.volume = 0.85;
+
+        await audioContext.resume();
 
         await music.play();
 
         drawVisualizer();
 
-        icon.classList.remove("fa-volume-up");
-        icon.classList.add("fa-volume-xmark");
-
-        playing = true;
-
     }catch(err){
 
-        console.log("Autoplay blocat.");
+        playing = false;
+
+        icon.classList.remove("fa-volume-xmark");
+        icon.classList.add("fa-volume-up");
     }
 }
+
+window.addEventListener("load", () => {
+
+    initMusic();
+});
 
 async function toggleMusic(){
 
@@ -888,22 +890,7 @@ async function toggleMusic(){
         setupAudio();
     }
 
-    if(!playing){
-
-        await audioContext.resume();
-
-        music.muted = false;
-
-        await music.play();
-
-        drawVisualizer();
-
-        icon.classList.remove("fa-volume-up");
-        icon.classList.add("fa-volume-xmark");
-
-        playing = true;
-
-    }else{
+    if(playing){
 
         music.pause();
 
@@ -915,22 +902,39 @@ async function toggleMusic(){
         icon.classList.add("fa-volume-up");
 
         playing = false;
+
+    }else{
+
+        await audioContext.resume();
+
+        await music.play();
+
+        drawVisualizer();
+
+        icon.classList.remove("fa-volume-up");
+        icon.classList.add("fa-volume-xmark");
+
+        playing = true;
     }
 }
 
-window.addEventListener("load", () => {
-
-    startMusic();
-});
-
-document.addEventListener("click", () => {
+document.addEventListener("click", async () => {
 
     if(!playing){
 
-        startMusic();
+        try{
+
+            await initMusic();
+
+            playing = true;
+
+            icon.classList.remove("fa-volume-up");
+            icon.classList.add("fa-volume-xmark");
+
+        }catch(e){}
     }
 
-},{ once:true });
+}, { once:true });
 
 </script>
 
