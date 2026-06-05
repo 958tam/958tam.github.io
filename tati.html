@@ -222,12 +222,17 @@ body{
     box-shadow:
         0 0 35px rgba(255,255,255,0.08),
         0 0 60px rgba(0,0,0,0.45);
+}
 
-    display:flex;
+.video-frame iframe{
 
-    align-items:center;
+    width:100%;
 
-    justify-content:center;
+    height:100%;
+
+    border:none;
+
+    display:block;
 }
 
 .video-placeholder{
@@ -478,20 +483,12 @@ body{
 
     <div class="video-frame">
 
-        <div class="video-placeholder">
-
-            <i class="fab fa-youtube"></i>
-
-            <h2>
-                Video Tati
-            </h2>
-
-            <p>
-                Aici va fi integrat videoclipul YouTube.
-                Chenarul este deja pregătit pentru embed.
-            </p>
-
-        </div>
+        <iframe
+    src="https://www.youtube.com/embed/Bznxx12Ptl0?autoplay=1&mute=1&rel=0"
+    title="Video Tati"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowfullscreen>
+</iframe>
 
     </div>
 
