@@ -220,53 +220,17 @@ body{
     box-shadow:
         0 0 35px rgba(255,215,0,0.16),
         0 0 60px rgba(0,0,0,0.45);
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
 }
 
-.video-placeholder{
+.video-frame iframe{
 
-    text-align:center;
+    width:100%;
 
-    padding:30px;
-}
+    height:100%;
 
-.video-placeholder i{
+    border:none;
 
-    font-size:72px;
-
-    color:#ffd700;
-
-    margin-bottom:20px;
-
-    text-shadow:
-        0 0 25px rgba(255,215,0,0.45);
-}
-
-.video-placeholder h2{
-
-    font-family:'Permanent Marker',cursive;
-
-    font-size:34px;
-
-    margin-bottom:18px;
-
-    letter-spacing:1px;
-}
-
-.video-placeholder p{
-
-    color:#d0d0d0;
-
-    font-size:17px;
-
-    line-height:1.8;
-
-    max-width:600px;
+    display:block;
 }
 
 /* FOOTER */
@@ -394,21 +358,6 @@ body{
         border-radius:22px;
     }
 
-    .video-placeholder i{
-
-        font-size:54px;
-    }
-
-    .video-placeholder h2{
-
-        font-size:24px;
-    }
-
-    .video-placeholder p{
-
-        font-size:15px;
-    }
-
     .footer-logo{
 
         font-size:28px;
@@ -474,20 +423,12 @@ body{
 
     <div class="video-frame">
 
-        <div class="video-placeholder">
-
-            <i class="fab fa-youtube"></i>
-
-            <h2>
-                Video Dav
-            </h2>
-
-            <p>
-                Aici va fi integrat videoclipul YouTube.
-                Chenarul este deja pregătit pentru embed.
-            </p>
-
-        </div>
+        <iframe
+            src="https://www.youtube.com/embed/iapFrL7BEvM?autoplay=1&mute=1&rel=0"
+            title="Video Dav"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen>
+        </iframe>
 
     </div>
 
