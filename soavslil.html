@@ -1,1 +1,146 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SOA vs LIL | #TAM</title>
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#111;color:#fff;font-family:Arial,sans-serif;overflow-x:hidden}
+.hero{position:relative;height:62vh;background:url('soavslil0.png') center center/cover no-repeat;display:flex;align-items:flex-end;justify-content:center}
+.overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,.18),rgba(0,0,0,.86))}
+.hero-content{position:relative;z-index:2;width:100%;text-align:center;padding:40px 20px 60px}
+.hero-title{font-family:'Permanent Marker',cursive;font-size:58px}
+.hero-subtitle{margin-top:10px;font-family:'Permanent Marker',cursive;font-size:22px;color:#ff2d2d}
+
+.music-section{height:72px;display:flex;align-items:center;justify-content:space-between;padding:0 14px;border-top:1px solid rgba(255,255,255,.08);border-bottom:1px solid rgba(255,255,255,.08)}
+.visualizer-container{flex:1}
+#visualizer{width:100%;height:50px}
+.music-btn{width:44px;height:44px;border:none;border-radius:50%;background:rgba(255,255,255,.08);color:#fff;cursor:pointer}
+
+.section{max-width:1100px;margin:auto;padding:70px 20px}
+.section h2{font-family:'Permanent Marker',cursive;text-align:center;margin-bottom:25px}
+.description{max-width:800px;margin:auto;text-align:center;line-height:1.8;color:#ddd}
+
+.flipbook-wrap{text-align:center}
+.book-image{width:100%;max-width:900px;border-radius:18px;box-shadow:0 0 30px rgba(0,0,0,.5);transition:.4s}
+.book-controls{margin-top:20px;display:flex;justify-content:center;gap:15px;align-items:center}
+.book-btn{padding:12px 20px;border:none;border-radius:12px;background:#222;color:#fff;cursor:pointer}
+.page-indicator{font-weight:bold}
+
+.video-wrapper{aspect-ratio:16/9;background:#1a1a1a;border-radius:20px;display:flex;align-items:center;justify-content:center;border:1px dashed #555}
+
+.full-comic{width:100%;border-radius:18px;cursor:pointer}
+.zoom-overlay{position:fixed;inset:0;background:rgba(0,0,0,.95);display:none;align-items:center;justify-content:center;padding:20px;z-index:9999}
+.zoom-overlay img{max-width:95%;max-height:95%}
+.close-zoom{position:absolute;top:20px;right:25px;font-size:34px;cursor:pointer}
+
+.footer{background:#0a0a0a;text-align:center;padding:55px 20px}
+.footer-logo{font-family:'Permanent Marker',cursive;font-size:34px;margin-bottom:18px}
+.black-t{color:#000;-webkit-text-stroke:1px #fff}
+.split-a{background:linear-gradient(to right,#ffd400 0%,#ffd400 50%,#ff2d2d 50%,#ff2d2d 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.pink-m{color:#ff4fa3}
+.footer-quote{color:#999;margin-bottom:35px}
+.footer-social{display:flex;justify-content:center;gap:20px;flex-wrap:wrap;margin-bottom:30px}
+.footer-social a{color:#fff;font-size:22px}
+.footer-copy{color:#666}
+
+@media(max-width:700px){
+.hero-title{font-size:42px}
+}
+</style>
+</head>
+<body>
+
+<section class="hero">
+<div class="overlay"></div>
+<div class="hero-content">
+<div class="hero-title">SOA vs LIL</div>
+<div class="hero-subtitle">#TAM</div>
+</div>
+</section>
+
+<section class="music-section">
+<div class="visualizer-container"><canvas id="visualizer"></canvas></div>
+<button class="music-btn" onclick="toggleMusic()"><i id="musicIcon" class="fas fa-volume-xmark"></i></button>
+<audio id="bgMusic" loop autoplay><source src="soavslil.mp3" type="audio/mpeg"></audio>
+</section>
+
+<section class="section">
+<h2>Poveste</h2>
+<div class="description">
+SOA vs LIL este o poveste născută din imaginație, joc și creativitate. O aventură din Universul #TAM, transformată într-o bandă desenată plină de energie, personaje și momente memorabile.
+</div>
+</section>
+
+<section class="section">
+<h2>Revista SOA vs LIL</h2>
+<div class="flipbook-wrap">
+<img id="pageImage" class="book-image" src="soavslil0.png" alt="Pagina">
+<div class="book-controls">
+<button class="book-btn" onclick="prevPage()">◀ Înapoi</button>
+<span id="pageIndicator" class="page-indicator">Pagina 1 din 13</span>
+<button class="book-btn" onclick="nextPage()">Înainte ▶</button>
+</div>
+</div>
+</section>
+
+<section class="section">
+<h2>Video SOA vs LIL</h2>
+<div class="video-wrapper">
+<p>Loc rezervat pentru videoclipul YouTube.</p>
+</div>
+</section>
+
+<section class="section">
+<h2>Banda completă</h2>
+<img src="soavslilbanda.png" class="full-comic" onclick="openZoom()">
+</section>
+
+<div class="zoom-overlay" id="zoomOverlay">
+<div class="close-zoom" onclick="closeZoom()">✕</div>
+<img src="soavslilbanda.png">
+</div>
+
+<footer class="footer">
+<div class="footer-logo">#<span class="black-t">T</span><span class="split-a">A</span><span class="pink-m">M</span> Universe</div>
+<div class="footer-quote">Știm că este puțin, dar orice construcție se realizează în timp.</div>
+<div class="footer-social">
+<a href="https://youtube.com/@tam958universe?si=tH4ilL0TK9Gzuht8" target="_blank"><i class="fab fa-youtube"></i></a>
+<a href="https://www.facebook.com/share/18qTg2ix7w/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+<a href="https://www.tiktok.com/@tam.universe?_r=1&_t=ZN-96V6I3qpKKc" target="_blank"><i class="fab fa-tiktok"></i></a>
+<a href="https://www.instagram.com/958.tam.fam?igsh=MWE1OWh0eWlubDBuMw==" target="_blank"><i class="fab fa-instagram"></i></a>
+<a href="https://x.com/TAM958Universe" target="_blank"><i class="fab fa-x-twitter"></i></a>
+<a href="https://whatsapp.com/channel/0029Vb7raMh1t90jV21u1t3X" target="_blank"><i class="fab fa-whatsapp"></i></a>
+</div>
+<div class="footer-copy">© 2026 #TAM</div>
+</footer>
+
+<script>
+const pages=["soavslil0.png","soavslil001.png","soavslil002.png","soavslil003.png","soavslil004.png","soavslil005.png","soavslil006.png","soavslil007.png","soavslil008.png","soavslil009.png","soavslil010.png","soavslil011.png","soavslil012.png"];
+let currentPage=0;
+function updatePage(){
+document.getElementById('pageImage').src=pages[currentPage];
+document.getElementById('pageIndicator').textContent=`Pagina ${currentPage+1} din ${pages.length}`;
+}
+function nextPage(){if(currentPage<pages.length-1){currentPage++;updatePage();}}
+function prevPage(){if(currentPage>0){currentPage--;updatePage();}}
+function openZoom(){document.getElementById('zoomOverlay').style.display='flex';}
+function closeZoom(){document.getElementById('zoomOverlay').style.display='none';}
+
+const music=document.getElementById("bgMusic");
+let playing=true;
+async function toggleMusic(){
+if(playing){music.pause();playing=false;}
+else{await music.play();playing=true;}
+}
+</script>
+
+</body>
+</html>
