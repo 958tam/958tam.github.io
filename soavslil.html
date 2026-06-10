@@ -793,6 +793,7 @@ VIDEO SOA vs LIL
 </div>
 
 <iframe
+id="soaVideo"
 src="https://www.youtube.com/embed/Y61uOLcLixU"
 title="SOA vs LIL"
 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -1094,6 +1095,31 @@ icon.classList.add("fa-volume-xmark");
 }
 
 },{once:true});
+
+  /* PAUSE MUSIC WHEN VIDEO SECTION IS REACHED */
+
+const videoSection = document.querySelector('.video-section');
+
+const observer = new IntersectionObserver((entries) => {
+
+entries.forEach(entry => {
+
+if(entry.isIntersecting){
+
+music.pause();
+
+playing = false;
+
+icon.classList.remove("fa-volume-xmark");
+icon.classList.add("fa-volume-up");
+
+}
+
+});
+
+},{threshold:0.5});
+
+observer.observe(videoSection);
 
 </script>
 
