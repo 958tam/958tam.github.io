@@ -386,7 +386,34 @@ border:1px solid rgba(255,255,255,.08);
 padding:60px 20px;
 
 border-radius:20px;
+  border:2px solid rgba(255,68,68,.4);
+
+box-shadow:
+0 0 15px rgba(255,68,68,.5),
+0 0 30px rgba(255,68,68,.3),
+0 0 50px rgba(255,68,68,.15);
+
+transition:.3s ease;
 }
+  .video-box:hover{
+
+box-shadow:
+0 0 20px rgba(255,68,68,.7),
+0 0 40px rgba(255,68,68,.4),
+0 0 70px rgba(255,68,68,.2);
+  }
+  .video-box iframe{
+
+width:100%;
+
+aspect-ratio:16/9;
+
+border:none;
+
+border-radius:12px;
+
+margin-top:15px;
+  }
 
 .video-title{
 
@@ -762,16 +789,15 @@ Nu exista reteta perfecta. Dar asta e frumusetea imaginatiei. Povestea pleaca de
 <div class="video-box">
 
 <div class="video-title">
-
 VIDEO SOA vs LIL
-
 </div>
 
-<div class="video-text">
-
-În curând pe YouTube
-
-</div>
+<iframe
+src="https://www.youtube.com/embed/Y61uOLcLixU"
+title="SOA vs LIL"
+allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+allowfullscreen>
+</iframe>
 
 </div>
 
