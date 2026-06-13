@@ -342,6 +342,12 @@ body{
     padding:0 0 30px;
 }
 
+    #prevBtn{
+
+    min-width:60px;
+
+    }
+
 .play-btn{
     width:72px;
     height:72px;
@@ -630,6 +636,8 @@ body{
 
             <div class="controls">
 
+                <button id="prevBtn">⏮</button>
+
                 <button
                     id="playBtn"
                     class="play-btn">
@@ -812,6 +820,9 @@ document.getElementById("coverImage");
 const songTitle =
 document.getElementById("songTitle");
 
+const prevBtn =
+document.getElementById("prevBtn");
+
 const playBtn =
 document.getElementById("playBtn");
 
@@ -851,6 +862,26 @@ resizeCanvas();
 window.addEventListener(
     "resize",
     resizeCanvas
+);
+
+            prevBtn.addEventListener(
+    "click",
+    () => {
+
+        currentSong--;
+
+        if(currentSong < 0){
+
+            currentSong =
+            songs.length - 1;
+
+        }
+
+        loadSong(currentSong);
+
+        audio.play();
+
+    }
 );
 
 /* LOAD SONG */
