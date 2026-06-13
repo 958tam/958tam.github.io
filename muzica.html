@@ -159,14 +159,138 @@ body{
     0 0 30px rgba(255,0,0,0.12),
     inset 0 0 30px rgba(255,255,255,0.02);
 }
+    /* LIVE */
+
+.live-indicator{
+
+    position:absolute;
+
+    top:18px;
+    left:18px;
+
+    z-index:5;
+
+    background:rgba(0,0,0,.65);
+
+    padding:8px 14px;
+
+    border-radius:30px;
+
+    font-size:13px;
+
+    letter-spacing:1px;
+
+    backdrop-filter:blur(10px);
+}
+
+.live-dot{
+
+    width:10px;
+    height:10px;
+
+    background:#ff2020;
+
+    border-radius:50%;
+
+    display:inline-block;
+
+    margin-right:8px;
+
+    animation:livePulse 1.4s infinite;
+}
+
+@keyframes livePulse{
+
+    0%{
+        transform:scale(1);
+        opacity:1;
+    }
+
+    50%{
+        transform:scale(1.6);
+        opacity:.45;
+    }
+
+    100%{
+        transform:scale(1);
+        opacity:1;
+    }
+}
 
 .cover-area{
     position:relative;
 }
 
 .cover-area img{
+
     width:100%;
     display:block;
+
+    animation:coverGlow 4s infinite;
+}
+
+    @keyframes coverGlow{
+
+    0%{
+        box-shadow:
+        0 0 10px rgba(255,0,0,.15);
+    }
+
+    50%{
+        box-shadow:
+        0 0 35px rgba(255,0,0,.45);
+    }
+
+    100%{
+        box-shadow:
+        0 0 10px rgba(255,0,0,.15);
+    }
+    }
+
+    .cover-fade{
+
+    animation:fadeCover .5s ease;
+
+}
+
+@keyframes fadeCover{
+
+    from{
+
+        opacity:.2;
+        transform:scale(.98);
+
+    }
+
+    to{
+
+        opacity:1;
+        transform:scale(1);
+
+    }
+
+}
+
+    .cover-fade{
+
+    animation:fadeCover .5s ease;
+}
+
+@keyframes fadeCover{
+
+    from{
+
+        opacity:.2;
+        transform:scale(.98);
+
+    }
+
+    to{
+
+        opacity:1;
+        transform:scale(1);
+
+    }
 }
 
 .cover-glass{
@@ -463,6 +587,14 @@ body{
 
         <div class="player-box">
 
+            <div class="live-indicator">
+
+    <span class="live-dot"></span>
+
+    LIVE • TAM MUSIC STATION
+
+            </div>
+
             <div class="cover-area">
 
                 <img
@@ -732,6 +864,16 @@ function loadSong(index){
 
     coverImage.src =
     songs[index].cover;
+
+    coverImage.classList.remove(
+    "cover-fade"
+);
+
+void coverImage.offsetWidth;
+
+coverImage.classList.add(
+    "cover-fade"
+);
 
     songTitle.textContent =
     songs[index].title;
