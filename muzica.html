@@ -645,6 +645,7 @@ body{
                     <i class="fas fa-pause"></i>
 
                 </button>
+                <button id="nextBtn">⏭</button>
 
             </div>
 
@@ -825,6 +826,31 @@ document.getElementById("prevBtn");
 
 const playBtn =
 document.getElementById("playBtn");
+
+            const nextBtn =
+document.getElementById("nextBtn");
+
+            nextBtn.addEventListener(
+    "click",
+    () => {
+
+        currentSong++;
+
+        if(
+            currentSong >=
+            songs.length
+        ){
+
+            currentSong = 0;
+
+        }
+
+        loadSong(currentSong);
+
+        audio.play();
+
+    }
+);
 
 const tracks =
 document.querySelectorAll(".track");
