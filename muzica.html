@@ -1265,25 +1265,14 @@ function drawVisualizer(){
                 canvas.height
             );
 
-            gradient.addColorStop(
-                0,
-                "#ffffff"
-            );
-
-            gradient.addColorStop(
-                0.4,
-                "#ff0000"
-            );
-
-            gradient.addColorStop(
-                1,
-                "rgba(255,0,0,0.05)"
-            );
+            gradient.addColorStop(0,"#ffffff");
+gradient.addColorStop(0.35,"#ff4d4d");
+gradient.addColorStop(1,"#ff0000");
 
             ctx.fillStyle =
             gradient;
 
-            ctx.shadowBlur = 18;
+            ctx.shadowBlur = 22;
 
             ctx.shadowColor =
             "#ff0000";
