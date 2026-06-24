@@ -513,7 +513,17 @@ inset 0 0 30px rgba(255,255,255,0.02);
 }
 
 .track.active{
-    background:rgba(255,0,0,0.22);
+
+    background:rgba(255,0,0,0.12);
+
+    border-left:4px solid #ff3b3b;
+
+    box-shadow:
+    0 0 20px rgba(255,0,0,0.18);
+
+    animation:
+    trackPulse 2.5s infinite;
+
 }
 
 .track img{
@@ -527,6 +537,38 @@ inset 0 0 30px rgba(255,255,255,0.02);
     font-size:15px;
     line-height:1.5;
 }
+
+    .track-info{
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    flex:1;
+
+}
+
+.track-status{
+
+    font-size:11px;
+
+    letter-spacing:1px;
+
+    color:#888;
+
+    margin-top:4px;
+
+}
+
+    .track.active .track-status{
+
+    color:#ff4d4d;
+
+    font-weight:bold;
+
+    }
 
 /* QUOTE */
 
@@ -641,6 +683,30 @@ inset 0 0 30px rgba(255,255,255,0.02);
         font-size:22px;
     }
 }
+    @keyframes trackPulse{
+
+    0%{
+
+        box-shadow:
+        0 0 15px rgba(255,0,0,0.12);
+
+    }
+
+    50%{
+
+        box-shadow:
+        0 0 28px rgba(255,0,0,0.28);
+
+    }
+
+    100%{
+
+        box-shadow:
+        0 0 15px rgba(255,0,0,0.12);
+
+    }
+
+    }
 
 </style>
 </head>
