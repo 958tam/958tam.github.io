@@ -1,1 +1,195 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>Jocuri | #TAM</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:#111;
+    color:#fff;
+    font-family:Arial,sans-serif;
+}
+
+/* HERO */
+
+.hero{
+
+    position:relative;
+
+    height:65vh;
+
+    background:
+        url("footer.png")
+        center center/cover no-repeat;
+
+    display:flex;
+    align-items:flex-end;
+    justify-content:center;
+
+}
+
+.hero::before{
+
+    content:"";
+
+    position:absolute;
+    inset:0;
+
+    background:
+    linear-gradient(
+        to bottom,
+        rgba(0,0,0,.18),
+        rgba(0,0,0,.88)
+    );
+
+}
+
+/* CONTENT */
+
+.hero-content{
+
+    position:relative;
+
+    z-index:2;
+
+    width:100%;
+
+    text-align:center;
+
+    padding:40px 20px 70px;
+
+}
+
+.hero-title{
+
+    font-family:'Permanent Marker',cursive;
+
+    font-size:58px;
+
+    line-height:1.2;
+
+    text-shadow:
+    0 0 18px rgba(0,0,0,.9);
+
+}
+
+.message{
+
+    max-width:850px;
+
+    margin:70px auto;
+
+    padding:0 30px;
+
+    text-align:center;
+
+    font-size:26px;
+
+    color:#d8d8d8;
+
+    line-height:1.8;
+
+}
+
+/* BUTTON */
+
+.back{
+
+    display:inline-block;
+
+    margin-top:35px;
+
+    padding:14px 28px;
+
+    border-radius:16px;
+
+    text-decoration:none;
+
+    color:#fff;
+
+    background:rgba(255,255,255,.08);
+
+    transition:.3s;
+
+}
+
+.back:hover{
+
+    background:rgba(255,0,0,.18);
+
+    transform:translateY(-3px);
+
+}
+
+/* MOBILE */
+
+@media(max-width:700px){
+
+.hero{
+
+    height:50vh;
+
+}
+
+.hero-title{
+
+    font-size:40px;
+
+}
+
+.message{
+
+    font-size:21px;
+
+    margin:50px auto;
+
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <div class="hero-title">
+            Universul #TAM se construiește
+        </div>
+
+    </div>
+
+</section>
+
+<section class="message">
+
+    Cărămidă cu cărămidă, construim amintiri.
+
+    <br><br>
+
+    <a href="index.html" class="back">
+        ← Înapoi în Universul #TAM
+    </a>
+
+</section>
+
+</body>
+</html>
