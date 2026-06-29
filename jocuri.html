@@ -8,7 +8,7 @@
 <meta name="viewport"
 content="width=device-width, initial-scale=1.0">
 
-<title>Universul #TAM este in constructie</title>
+<title>Universul #TAM se construieste</title>
 
 <link rel="preconnect"
 href="https://fonts.googleapis.com">
@@ -30,28 +30,23 @@ box-sizing:border-box;
 
 }
 
-html,body{
+html{
 
-width:100%;
 height:100%;
-
-overflow:hidden;
-
-font-family:Arial,sans-serif;
-
-background:#111;
-
-color:white;
 
 }
 
 body{
 
-display:flex;
+min-height:100vh;
 
-justify-content:center;
+overflow-x:hidden;
 
-align-items:center;
+background:#111;
+
+font-family:Arial,sans-serif;
+
+color:white;
 
 }
 
@@ -65,45 +60,43 @@ width:100%;
 
 height:100vh;
 
-overflow:hidden;
-
 display:flex;
 
 justify-content:center;
 
 align-items:center;
 
+overflow:hidden;
+
 }
 
-/* BACKGROUND */
+/* IMAGINE */
 
-.hero::before{
-
-content:"";
+.hero-image{
 
 position:absolute;
 
-inset:0;
+left:0;
 
-background-image:url("footer.png");
+top:0;
 
-background-size:cover;
+width:135%;
 
-background-repeat:no-repeat;
+height:100%;
 
-background-position:left center;
+object-fit:cover;
 
-animation:panorama 48s ease-in-out infinite;
+object-position:left center;
 
-will-change:background-position;
+animation:panorama 52s ease-in-out infinite;
+
+will-change:transform;
 
 }
 
 /* OVERLAY */
 
-.hero::after{
-
-content:"";
+.overlay{
 
 position:absolute;
 
@@ -121,6 +114,42 @@ rgba(0,0,0,.78)
 
 );
 
+z-index:2;
+
+}
+
+/* PARTICULE */
+
+.particles{
+
+position:absolute;
+
+inset:0;
+
+pointer-events:none;
+
+overflow:hidden;
+
+z-index:3;
+
+}
+
+.particle{
+
+position:absolute;
+
+bottom:-20px;
+
+width:5px;
+
+height:5px;
+
+border-radius:50%;
+
+background:rgba(255,255,255,.18);
+
+animation:floatUp linear infinite;
+
 }
 
 /* CONTENT */
@@ -129,49 +158,89 @@ rgba(0,0,0,.78)
 
 position:relative;
 
-z-index:20;
+z-index:10;
 
 text-align:center;
 
-padding:25px;
+padding:30px;
 
 max-width:900px;
 
 }
 
-/* TITLE */
+/* TITLU */
 
 .title{
 
 font-family:'Permanent Marker',cursive;
 
-font-size:68px;
+font-size:66px;
 
-line-height:1.18;
-
-text-shadow:
-
-0 0 25px rgba(0,0,0,.95);
+line-height:1.2;
 
 opacity:0;
 
-transform:translateY(45px);
+transform:translateY(40px);
 
-animation:
-
-titleFade 1.8s ease forwards,
-
-titleGlow 48s linear infinite;
+animation:titleFade 1.8s forwards;
 
 }
 
-/* MESSAGE */
+/* LOGO */
+
+.logo{
+
+margin:18px 0;
+
+font-family:'Permanent Marker',cursive;
+
+font-size:70px;
+
+letter-spacing:2px;
+
+animation:titleGlow 52s linear infinite;
+
+}
+
+.black-t{
+
+color:#000;
+
+-webkit-text-stroke:1px white;
+
+}
+
+.split-a{
+
+background:linear-gradient(
+
+to right,
+
+#ffd400 50%,
+
+#ff2d2d 50%
+
+);
+
+-webkit-background-clip:text;
+
+-webkit-text-fill-color:transparent;
+
+}
+
+.pink-m{
+
+color:#ff4fa3;
+
+}
+
+/* TEXT */
 
 .message{
 
-margin-top:40px;
+margin-top:26px;
 
-font-size:30px;
+font-size:28px;
 
 line-height:1.8;
 
@@ -179,13 +248,11 @@ color:#ececec;
 
 opacity:0;
 
-transform:translateY(25px);
+transform:translateY(30px);
 
-animation:textFade 1.5s ease forwards;
+animation:textFade 1.8s forwards;
 
-animation-delay:1.2s;
-
-animation-fill-mode:forwards;
+animation-delay:1s;
 
 }
 
@@ -195,7 +262,7 @@ animation-fill-mode:forwards;
 
 display:inline-block;
 
-margin-top:55px;
+margin-top:50px;
 
 padding:16px 34px;
 
@@ -217,46 +284,23 @@ opacity:0;
 
 transform:translateY(20px);
 
-animation:
-
-buttonFade 1.5s
-  }
-
-  /* PARTICULE */
-
-.particles{
-
-position:absolute;
-
-inset:0;
-
-overflow:hidden;
-
-pointer-events:none;
-
-z-index:8;
+animation:buttonFade 1.5s ease 2s forwards;
 
 }
 
-.particle{
+.back:hover{
 
-position:absolute;
+background:rgba(255,40,40,.22);
 
-bottom:-30px;
+transform:translateY(-3px);
 
-width:5px;
+box-shadow:
 
-height:5px;
-
-border-radius:50%;
-
-background:rgba(255,255,255,.18);
-
-filter:blur(.5px);
-
-animation:floatUp linear infinite;
+0 0 25px rgba(255,0,0,.35);
 
 }
+
+  /* PARTICLE POSITIONS */
 
 .particle:nth-child(1){
 
@@ -272,15 +316,15 @@ animation-delay:0s;
 
 left:18%;
 
-animation-duration:28s;
+animation-duration:27s;
 
-animation-delay:4s;
+animation-delay:3s;
 
 }
 
 .particle:nth-child(3){
 
-left:34%;
+left:33%;
 
 animation-duration:25s;
 
@@ -290,7 +334,7 @@ animation-delay:7s;
 
 .particle:nth-child(4){
 
-left:48%;
+left:47%;
 
 animation-duration:30s;
 
@@ -300,19 +344,19 @@ animation-delay:2s;
 
 .particle:nth-child(5){
 
-left:62%;
+left:61%;
 
 animation-duration:24s;
 
-animation-delay:10s;
+animation-delay:11s;
 
 }
 
 .particle:nth-child(6){
 
-left:74%;
+left:76%;
 
-animation-duration:27s;
+animation-duration:28s;
 
 animation-delay:5s;
 
@@ -320,11 +364,11 @@ animation-delay:5s;
 
 .particle:nth-child(7){
 
-left:88%;
+left:90%;
 
-animation-duration:29s;
+animation-duration:26s;
 
-animation-delay:1s;
+animation-delay:8s;
 
 }
 
@@ -366,6 +410,54 @@ transform:translateY(0);
 
 }
 
+/* PANORAMA */
+
+@keyframes panorama{
+
+0%{
+
+transform:translateX(0);
+
+}
+
+15%{
+
+transform:translateX(0);
+
+}
+
+35%{
+
+transform:translateX(-8%);
+
+}
+
+50%{
+
+transform:translateX(-8%);
+
+}
+
+70%{
+
+transform:translateX(-16%);
+
+}
+
+85%{
+
+transform:translateX(-8%);
+
+}
+
+100%{
+
+transform:translateX(0);
+
+}
+
+}
+
 /* GLOW */
 
 @keyframes titleGlow{
@@ -373,85 +465,50 @@ transform:translateY(0);
 0%{
 
 text-shadow:
-0 0 25px rgba(0,0,0,.95);
+
+0 0 8px rgba(255,255,255,.15);
 
 }
 
-32%{
+34%{
 
 text-shadow:
-0 0 25px rgba(0,0,0,.95);
+
+0 0 8px rgba(255,255,255,.15);
 
 }
 
-42%{
+45%{
 
 text-shadow:
-0 0 12px rgba(255,255,255,.45),
-0 0 24px rgba(255,70,70,.55),
-0 0 45px rgba(255,0,0,.55);
+
+0 0 18px rgba(255,255,255,.75),
+
+0 0 35px rgba(255,60,60,.65),
+
+0 0 70px rgba(255,0,0,.45);
 
 }
 
-52%{
+56%{
 
 text-shadow:
-0 0 25px rgba(0,0,0,.95);
+
+0 0 8px rgba(255,255,255,.15);
 
 }
 
 100%{
 
 text-shadow:
-0 0 25px rgba(0,0,0,.95);
+
+0 0 8px rgba(255,255,255,.15);
 
 }
 
 }
 
-/* PANORAMA */
-
-@keyframes panorama{
-
-0%{
-
-background-position:left center;
-
-}
-
-20%{
-
-background-position:left center;
-
-}
-
-40%{
-
-background-position:center center;
-
-}
-
-60%{
-
-background-position:center center;
-
-}
-
-80%{
-
-background-position:right center;
-
-}
-
-100%{
-
-background-position:left center;
-
-}
-
-}
-
-/* PARTICLE */
+/* PARTICLES */
 
 @keyframes floatUp{
 
@@ -461,7 +518,9 @@ transform:
 
 translateY(0)
 
-translateX(0);
+translateX(0)
+
+scale(.6);
 
 opacity:0;
 
@@ -469,67 +528,33 @@ opacity:0;
 
 10%{
 
-opacity:.22;
+opacity:.20;
 
 }
 
-70%{
+50%{
 
-opacity:.22;
-
-}
-
-100%{
-
-transform:
-
-translateY(-115vh)
-
-translateX(40px);
-
-opacity:0;
+opacity:.26;
 
 }
 
-}
+90%{
 
-/* MOBILE */
-
-@media(max-width:700px){
-
-.title{
-
-font-size:44px;
+opacity:.10;
 
 }
-
-.message{
-
-font-size:22px;
-
-margin-top:30px;
-
-}
-
-.back{
-
-margin-top:42px;
-
-padding:14px 28px;
-
-font-size:15px;
-
-}
-
-}
-
-</style>
-
-  </head>
+</head>
 
 <body>
 
 <section class="hero">
+
+    <img
+        src="footer.png"
+        alt="Universul #TAM"
+        class="hero-image">
+
+    <div class="overlay"></div>
 
     <div class="particles">
 
@@ -547,14 +572,26 @@ font-size:15px;
 
         <div class="title">
 
-            Universul #TAM<br>
-            este in constructie
+            Universul
+
+        </div>
+
+        <div class="logo">
+
+            #<span class="black-t">T</span><span class="split-a">A</span><span class="pink-m">M</span>
+
+        </div>
+
+        <div class="title">
+
+            se construieste
 
         </div>
 
         <div class="message">
 
-            Cărămidă cu cărămidă,<br>
+            Caramida cu caramida,<br>
+
             construim amintiri.
 
         </div>
@@ -563,7 +600,7 @@ font-size:15px;
             href="index.html"
             class="back">
 
-            ← Înapoi în Universul #TAM
+            ← Inapoi in Universul #TAM
 
         </a>
 
@@ -574,3 +611,4 @@ font-size:15px;
 </body>
 
 </html>
+  
