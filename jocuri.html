@@ -1,31 +1,57 @@
 <!DOCTYPE html>
 <html lang="ro">
+
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Jocuri | #TAM</title>
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<title>Universul #TAM se construiește</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+<link rel="preconnect"
+href="https://fonts.googleapis.com">
+
+<link rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap"
+rel="stylesheet">
 
 <style>
 
 *{
+
 margin:0;
 padding:0;
 box-sizing:border-box;
+
+}
+
+html,body{
+
+width:100%;
+height:100%;
+
+overflow:hidden;
+
+font-family:Arial,sans-serif;
+
+background:#111;
+
+color:white;
+
 }
 
 body{
 
-background:#111;
-color:white;
-font-family:Arial,sans-serif;
-overflow:hidden;
+display:flex;
+
+justify-content:center;
+
+align-items:center;
 
 }
 
@@ -35,14 +61,17 @@ overflow:hidden;
 
 position:relative;
 
+width:100%;
+
 height:100vh;
 
-display:flex;
-justify-content:center;
-align-items:center;
-text-align:center;
-
 overflow:hidden;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
 
 }
 
@@ -56,13 +85,21 @@ position:absolute;
 
 inset:0;
 
-background:
-url("footer.png")
-center center/cover no-repeat;
+background-image:url("footer.png");
 
-animation:slowZoom 22s ease-in-out infinite alternate;
+background-size:cover;
+
+background-repeat:no-repeat;
+
+background-position:left center;
+
+animation:panorama 48s ease-in-out infinite;
+
+will-change:background-position;
 
 }
+
+/* OVERLAY */
 
 .hero::after{
 
@@ -73,10 +110,15 @@ position:absolute;
 inset:0;
 
 background:
+
 linear-gradient(
+
 to bottom,
-rgba(0,0,0,.20),
-rgba(0,0,0,.82)
+
+rgba(0,0,0,.10),
+
+rgba(0,0,0,.78)
+
 );
 
 }
@@ -87,9 +129,11 @@ rgba(0,0,0,.82)
 
 position:relative;
 
-z-index:5;
+z-index:20;
 
-padding:20px;
+text-align:center;
+
+padding:25px;
 
 max-width:900px;
 
@@ -101,18 +145,23 @@ max-width:900px;
 
 font-family:'Permanent Marker',cursive;
 
-font-size:64px;
+font-size:68px;
 
-line-height:1.2;
+line-height:1.18;
 
 text-shadow:
-0 0 20px rgba(0,0,0,.9);
+
+0 0 25px rgba(0,0,0,.95);
 
 opacity:0;
 
-transform:translateY(40px);
+transform:translateY(45px);
 
-animation:titleAppear 1.8s ease forwards;
+animation:
+
+titleFade 1.8s ease forwards,
+
+titleGlow 48s linear infinite;
 
 }
 
@@ -120,21 +169,23 @@ animation:titleAppear 1.8s ease forwards;
 
 .message{
 
-margin-top:45px;
+margin-top:40px;
 
-font-size:28px;
-
-color:#dddddd;
+font-size:30px;
 
 line-height:1.8;
+
+color:#ececec;
 
 opacity:0;
 
 transform:translateY(25px);
 
-animation:textAppear 1.5s ease forwards;
+animation:textFade 1.5s ease forwards;
 
 animation-delay:1.2s;
+
+animation-fill-mode:forwards;
 
 }
 
@@ -152,13 +203,13 @@ border-radius:18px;
 
 background:rgba(255,255,255,.08);
 
+backdrop-filter:blur(10px);
+
 text-decoration:none;
 
 color:white;
 
 font-size:17px;
-
-backdrop-filter:blur(10px);
 
 transition:.35s;
 
@@ -166,66 +217,277 @@ opacity:0;
 
 transform:translateY(20px);
 
-animation:buttonAppear 1.4s ease forwards;
+animation:
 
-animation-delay:2.2s;
+buttonFade 1.5s
+  }
+
+  /* PARTICULE */
+
+.particles{
+
+position:absolute;
+
+inset:0;
+
+overflow:hidden;
+
+pointer-events:none;
+
+z-index:8;
 
 }
 
-.back:hover{
+.particle{
 
-background:rgba(255,0,0,.18);
+position:absolute;
 
-transform:translateY(-3px);
+bottom:-30px;
+
+width:5px;
+
+height:5px;
+
+border-radius:50%;
+
+background:rgba(255,255,255,.18);
+
+filter:blur(.5px);
+
+animation:floatUp linear infinite;
 
 }
 
-/* ANIMATIONS */
+.particle:nth-child(1){
 
-@keyframes titleAppear{
+left:8%;
+
+animation-duration:22s;
+
+animation-delay:0s;
+
+}
+
+.particle:nth-child(2){
+
+left:18%;
+
+animation-duration:28s;
+
+animation-delay:4s;
+
+}
+
+.particle:nth-child(3){
+
+left:34%;
+
+animation-duration:25s;
+
+animation-delay:7s;
+
+}
+
+.particle:nth-child(4){
+
+left:48%;
+
+animation-duration:30s;
+
+animation-delay:2s;
+
+}
+
+.particle:nth-child(5){
+
+left:62%;
+
+animation-duration:24s;
+
+animation-delay:10s;
+
+}
+
+.particle:nth-child(6){
+
+left:74%;
+
+animation-duration:27s;
+
+animation-delay:5s;
+
+}
+
+.particle:nth-child(7){
+
+left:88%;
+
+animation-duration:29s;
+
+animation-delay:1s;
+
+}
+
+/* FADE */
+
+@keyframes titleFade{
 
 to{
 
 opacity:1;
+
 transform:translateY(0);
 
 }
 
 }
 
-@keyframes textAppear{
+@keyframes textFade{
 
 to{
 
 opacity:1;
+
 transform:translateY(0);
 
 }
 
 }
 
-@keyframes buttonAppear{
+@keyframes buttonFade{
 
 to{
 
 opacity:1;
+
 transform:translateY(0);
 
 }
 
 }
 
-@keyframes slowZoom{
+/* GLOW */
+
+@keyframes titleGlow{
 
 0%{
 
-transform:scale(1);
+text-shadow:
+0 0 25px rgba(0,0,0,.95);
+
+}
+
+32%{
+
+text-shadow:
+0 0 25px rgba(0,0,0,.95);
+
+}
+
+42%{
+
+text-shadow:
+0 0 12px rgba(255,255,255,.45),
+0 0 24px rgba(255,70,70,.55),
+0 0 45px rgba(255,0,0,.55);
+
+}
+
+52%{
+
+text-shadow:
+0 0 25px rgba(0,0,0,.95);
 
 }
 
 100%{
 
-transform:scale(1.08);
+text-shadow:
+0 0 25px rgba(0,0,0,.95);
+
+}
+
+}
+
+/* PANORAMA */
+
+@keyframes panorama{
+
+0%{
+
+background-position:left center;
+
+}
+
+20%{
+
+background-position:left center;
+
+}
+
+40%{
+
+background-position:center center;
+
+}
+
+60%{
+
+background-position:center center;
+
+}
+
+80%{
+
+background-position:right center;
+
+}
+
+100%{
+
+background-position:left center;
+
+}
+
+}
+
+/* PARTICLE */
+
+@keyframes floatUp{
+
+0%{
+
+transform:
+
+translateY(0)
+
+translateX(0);
+
+opacity:0;
+
+}
+
+10%{
+
+opacity:.22;
+
+}
+
+70%{
+
+opacity:.22;
+
+}
+
+100%{
+
+transform:
+
+translateY(-115vh)
+
+translateX(40px);
+
+opacity:0;
 
 }
 
@@ -237,7 +499,7 @@ transform:scale(1.08);
 
 .title{
 
-font-size:42px;
+font-size:44px;
 
 }
 
@@ -245,7 +507,7 @@ font-size:42px;
 
 font-size:22px;
 
-margin-top:32px;
+margin-top:30px;
 
 }
 
@@ -253,40 +515,59 @@ margin-top:32px;
 
 margin-top:42px;
 
+padding:14px 28px;
+
+font-size:15px;
+
 }
 
 }
 
 </style>
 
-</head>
+  </head>
 
 <body>
 
 <section class="hero">
 
-<div class="content">
+    <div class="particles">
 
-<div class="title">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
 
-Universul #TAM<br>se construiește
+    </div>
 
-</div>
+    <div class="content">
 
-<div class="message">
+        <div class="title">
 
-Cărămidă cu cărămidă,<br>
-construim amintiri.
+            Universul #TAM<br>
+            se construiește
 
-</div>
+        </div>
 
-<a href="index.html" class="back">
+        <div class="message">
 
-← Înapoi în Universul #TAM
+            Cărămidă cu cărămidă,<br>
+            construim amintiri.
 
-</a>
+        </div>
 
-</div>
+        <a
+            href="index.html"
+            class="back">
+
+            ← Înapoi în Universul #TAM
+
+        </a>
+
+    </div>
 
 </section>
 
