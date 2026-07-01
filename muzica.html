@@ -1074,25 +1074,41 @@ inset 0 0 30px rgba(255,255,255,0.02);
 const songs = [
 
 {
-    title:"ȘOA vs LIL",
-    file:"soavslil.mp3",
-    cover:"soavslil0.png"
+    title:"Încă un nivel",
+    artist:"Universul #TAM",
+    badge:"🎮 TAM GAMES",
+    file:"jocuri.mp3",
+    cover:"jocuri.png"
 },
 
 {
     title:"Benzi Desenate",
+    artist:"Universul #TAM",
+    badge:"💥 TAM COMICS",
     file:"benzidesenate.mp3",
     cover:"benzidesenate.png"
 },
 
 {
+    title:"ȘOA vs LIL",
+    artist:"Universul #TAM",
+    badge:"⚽ TAM FOOTBALL",
+    file:"soavslil.mp3",
+    cover:"soavslil0.png"
+},
+
+{
     title:"Poveste. Viață. Familie",
+    artist:"Universul #TAM",
+    badge:"📖 TAM STORY",
     file:"desprenoi.mp3",
     cover:"desprenoi.png"
 },
 
 {
     title:"Bine ai venit în Universul #TAM",
+    artist:"Universul #TAM",
+    badge:"✨ TAM INTRO",
     file:"music.mp3",
     cover:"cover.png"
 }
@@ -1121,6 +1137,12 @@ document.getElementById("coverImage");
 
 const songTitle =
 document.getElementById("songTitle");
+
+            const songArtist =
+document.getElementById("songArtist");
+
+const songBadge =
+document.getElementById("songBadge");
 
 const prevBtn =
 document.getElementById("prevBtn");
@@ -1235,6 +1257,12 @@ coverImage.classList.add(
 
     songTitle.textContent =
     songs[index].title;
+
+    songArtist.textContent =
+songs[index].artist;
+
+songBadge.textContent =
+songs[index].badge;
 
     tracks.forEach(track =>
         track.classList.remove("active")
