@@ -330,6 +330,104 @@ body{
     text-shadow:
         0 0 10px rgba(0,0,0,0.7);
 }
+    /* PUZZLE TILE */
+
+.puzzle-tile-wrapper{
+
+    display:flex;
+
+    justify-content:center;
+
+    margin-top:35px;
+
+}
+
+.puzzle-tile{
+
+    position:relative;
+
+    width:420px;
+
+    height:240px;
+
+    border-radius:28px;
+
+    overflow:hidden;
+
+    text-decoration:none;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    box-shadow:
+        0 0 20px rgba(0,0,0,.35);
+
+    transition:.4s;
+
+}
+
+.puzzle-tile:hover{
+
+    transform:translateY(-8px) scale(1.02);
+
+    box-shadow:
+        0 0 30px rgba(255,0,0,.20);
+
+}
+
+.puzzle-tile img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    transition:.5s;
+
+}
+
+.puzzle-tile:hover img{
+
+    transform:scale(1.08);
+
+}
+
+.puzzle-overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    display:flex;
+
+    align-items:flex-end;
+
+    justify-content:center;
+
+    padding-bottom:20px;
+
+    background:linear-gradient(
+        to top,
+        rgba(0,0,0,.75),
+        rgba(0,0,0,0)
+    );
+
+}
+
+.puzzle-title{
+
+    color:white;
+
+    font-size:26px;
+
+    font-weight:bold;
+
+    text-align:center;
+
+    text-shadow:
+        0 0 15px rgba(0,0,0,.9);
+
+}
 
 /* CONTINUT */
 
@@ -623,11 +721,11 @@ body{
 
         <img src="puzzle.png" alt="Puzzle Collection">
 
-        <div class="tile-overlay">
+        <div class="puzzle-overlay">
 
-            <div class="tile-title">
+            <div class="puzzle-title">
 
-                Puzzle Collection
+                🧩 Puzzle Collection
 
             </div>
 
@@ -636,7 +734,6 @@ body{
     </a>
 
     </div>
-
 </section>
 <section class="content">
 
