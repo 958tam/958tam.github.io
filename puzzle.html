@@ -312,6 +312,135 @@ body{
 
     margin-top:40px;
 }
+    /* PUZZLE CARD */
+
+.puzzle-card{
+
+    background:#1a1a1a;
+
+    border-radius:26px;
+
+    overflow:hidden;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    box-shadow:
+        0 0 22px rgba(0,0,0,.35);
+
+    transition:.35s;
+
+}
+
+.puzzle-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:
+        0 0 28px rgba(255,0,0,.20);
+
+}
+
+.puzzle-image{
+
+    width:100%;
+
+    height:260px;
+
+    object-fit:cover;
+
+    display:block;
+
+}
+
+.puzzle-info{
+
+    padding:22px;
+
+}
+
+.puzzle-name{
+
+    font-family:'Permanent Marker',cursive;
+
+    font-size:28px;
+
+    margin-bottom:10px;
+
+}
+
+.puzzle-size{
+
+    color:#bbbbbb;
+
+    margin-bottom:20px;
+
+    font-size:15px;
+
+}
+
+.progress-text{
+
+    margin-bottom:10px;
+
+}
+
+.progress-bar{
+
+    width:100%;
+
+    height:10px;
+
+    border-radius:20px;
+
+    background:#2a2a2a;
+
+    overflow:hidden;
+
+    margin-bottom:22px;
+
+}
+
+.progress-fill{
+
+    width:0%;
+
+    height:100%;
+
+    background:linear-gradient(
+        90deg,
+        #ffd400,
+        #ff2d2d
+    );
+
+}
+
+.play-btn{
+
+    width:100%;
+
+    padding:14px;
+
+    border:none;
+
+    border-radius:14px;
+
+    cursor:pointer;
+
+    font-size:16px;
+
+    color:white;
+
+    background:#ff2d2d;
+
+    transition:.3s;
+
+}
+
+.play-btn:hover{
+
+    background:#ff4d4d;
+
+}
 
 </style>
 
@@ -421,6 +550,48 @@ body{
     </div>
 
     <div class="puzzle-grid">
+
+        <!-- PUZZLE 1 -->
+
+<div class="puzzle-card">
+
+    <img src="cover.png" class="puzzle-image">
+
+    <div class="puzzle-info">
+
+        <div class="puzzle-name">
+
+            Universul #TAM
+
+        </div>
+
+        <div class="puzzle-size">
+
+            Puzzle 3 × 3
+
+        </div>
+
+        <div class="progress-text">
+
+            🧩 0 / 9 piese
+
+        </div>
+
+        <div class="progress-bar">
+
+            <div class="progress-fill"></div>
+
+        </div>
+
+        <button class="play-btn">
+
+            Continuă
+
+        </button>
+
+    </div>
+
+</div>
 
             </div>
 
