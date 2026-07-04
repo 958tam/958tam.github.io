@@ -42,16 +42,30 @@ body{
 
     height:52vh;
 
-    background:
-    url('puzzle.png')
-    center 18%/cover no-repeat;
+    overflow:hidden;
 
     display:flex;
 
     align-items:flex-end;
 
     justify-content:center;
+
 }
+    .hero-image{
+
+    position:absolute;
+
+    inset:0;
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    object-position:center top;
+
+    }
 
 .overlay{
 
@@ -308,6 +322,10 @@ body{
 <!-- HERO -->
 
 <section class="hero">
+
+    <img
+        src="puzzle.png"
+        class="hero-image">
 
     <div class="overlay"></div>
 
