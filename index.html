@@ -265,6 +265,64 @@ body{
     box-shadow:
         0 0 30px rgba(255,0,0,0.18);
 }
+    /* MYSTERY TILE */
+
+.mystery-tile{
+
+    cursor:default;
+
+    background:
+    linear-gradient(
+        135deg,
+        #171717,
+        #222
+    );
+
+}
+
+.mystery-tile:hover{
+
+    transform:none;
+
+    box-shadow:
+        0 0 20px rgba(0,0,0,.35);
+
+}
+
+.mystery-tile .tile-overlay{
+
+    background:
+    linear-gradient(
+        to top,
+        rgba(0,0,0,.85),
+        rgba(0,0,0,.45)
+    );
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:0;
+
+}
+
+.mystery-tile .tile-title{
+
+    font-size:42px;
+
+    color:#999;
+
+    transition:.35s;
+
+}
+
+.mystery-tile:hover .tile-title{
+
+    color:#ffd400;
+
+    transform:scale(1.08);
+
+}
 
 .tile img{
 
@@ -739,13 +797,29 @@ body{
 
         <div class="tile-title">
 
-            Povești
+            Povesti
 
         </div>
 
     </div>
 
 </a>
+
+    <!-- TILE 6 -->
+
+<div class="tile mystery-tile">
+
+    <div class="tile-overlay">
+
+        <div class="tile-title">
+
+            《 ? 》
+
+        </div>
+
+    </div>
+
+</div>
 
     <div class="puzzle-tile-wrapper">
 
