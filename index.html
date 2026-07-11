@@ -228,9 +228,12 @@ body{
 
     display:grid;
 
-    grid-template-columns:repeat(2, 1fr);
+    grid-template-columns:repeat(2, minmax(280px,1fr));
+
+    justify-content:center;
 
     gap:22px;
+
 }
 
 .tile{
@@ -290,6 +293,14 @@ body{
 .tile-benzi img{
 
     object-position:center center;
+}
+
+    /* POVESTI TILE */
+
+.tile-povesti img{
+
+    object-position:center center;
+
 }
 
 .tile-overlay{
@@ -717,6 +728,24 @@ body{
         </a>
 
     </div>
+
+    <!-- TILE 5 -->
+
+<a href="povesti.html" class="tile tile-povesti">
+
+    <img src="povesti.png" alt="Povești">
+
+    <div class="tile-overlay">
+
+        <div class="tile-title">
+
+            Povești
+
+        </div>
+
+    </div>
+
+</a>
 
     <div class="puzzle-tile-wrapper">
 
