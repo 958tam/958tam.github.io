@@ -1,12 +1,16 @@
 <!DOCTYPE html>
 <html lang="ro">
+
 <head>
+
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Muzica | #TAM</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
+
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
 <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
@@ -16,788 +20,874 @@
 <style>
 
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+margin:0;
+padding:0;
+box-sizing:border-box;
 }
 
 body{
-    background:#111;
-    color:white;
-    font-family:Arial,sans-serif;
-    overflow-x:hidden;
+background:#111;
+color:white;
+font-family:Arial,sans-serif;
+overflow-x:hidden;
 }
 
 /* HERO */
 
 .hero{
-    position:relative;
-    width:100%;
-    overflow:hidden;
+position:relative;
+width:100%;
+overflow:hidden;
 }
 
 .hero img{
-    width:100%;
-    display:block;
-    object-fit:cover;
+width:100%;
+display:block;
+object-fit:cover;
 }
 
 .hero::after{
-    content:"";
-    position:absolute;
-    inset:0;
-    background:
-    linear-gradient(
-        to bottom,
-        rgba(0,0,0,0.15),
-        rgba(0,0,0,0.82)
-    );
+content:"";
+position:absolute;
+inset:0;
+background:
+linear-gradient(
+to bottom,
+rgba(0,0,0,.15),
+rgba(0,0,0,.82)
+);
 }
 
 .hero-content{
-    position:absolute;
-    bottom:50px;
-    left:50%;
-    transform:translateX(-50%);
-    z-index:2;
-    text-align:center;
-    width:100%;
-    padding:0 20px;
+position:absolute;
+bottom:50px;
+left:50%;
+transform:translateX(-50%);
+z-index:2;
+text-align:center;
+width:100%;
+padding:0 20px;
 }
 
 .hero-title{
-    font-family:'Permanent Marker',cursive;
-    font-size:58px;
-    letter-spacing:2px;
-    margin-bottom:12px;
-    text-shadow:0 0 20px rgba(0,0,0,0.9);
+font-family:'Permanent Marker',cursive;
+font-size:58px;
+letter-spacing:2px;
+margin-bottom:12px;
+text-shadow:0 0 20px rgba(0,0,0,.9);
 }
 
 .hero-subtitle{
-    font-size:18px;
-    color:#ececec;
-    text-shadow:0 0 14px rgba(0,0,0,0.9);
+font-size:18px;
+color:#ececec;
+text-shadow:0 0 14px rgba(0,0,0,.9);
 }
 
 /* BACK */
 
 .back-section{
-    padding:22px 20px;
-    background:#121212;
-    border-top:1px solid rgba(255,255,255,0.05);
-    border-bottom:1px solid rgba(255,255,255,0.05);
+padding:22px 20px;
+background:#121212;
+border-top:1px solid rgba(255,255,255,.05);
+border-bottom:1px solid rgba(255,255,255,.05);
 }
 
 .back-btn{
-    display:inline-flex;
-    align-items:center;
-    gap:10px;
-    text-decoration:none;
-    color:white;
-    padding:12px 18px;
-    border-radius:14px;
-    background:rgba(255,255,255,0.06);
-    transition:.3s;
+display:inline-flex;
+align-items:center;
+gap:10px;
+text-decoration:none;
+color:white;
+padding:12px 18px;
+border-radius:14px;
+background:rgba(255,255,255,.06);
+transition:.3s;
 }
 
 .back-btn:hover{
-    background:rgba(255,0,0,0.18);
-    transform:translateX(-4px);
+background:rgba(255,0,0,.18);
+transform:translateX(-4px);
 }
 
 /* INTRO */
 
 .intro{
-    max-width:900px;
-    margin:auto;
-    text-align:center;
-    padding:80px 25px;
+max-width:900px;
+margin:auto;
+text-align:center;
+padding:80px 25px;
 }
 
 .intro-title{
-    font-family:'Permanent Marker',cursive;
-    font-size:34px;
-    margin-bottom:25px;
+font-family:'Permanent Marker',cursive;
+font-size:34px;
+margin-bottom:25px;
 }
 
 .intro-text{
-    color:#d5d5d5;
-    line-height:1.9;
-    font-size:19px;
+color:#d5d5d5;
+line-height:1.9;
+font-size:19px;
 }
 
 /* MUSIC STATION */
 
 .station-section{
-    max-width:1200px;
-    margin:auto;
-    padding:20px;
+max-width:1200px;
+margin:auto;
+padding:20px;
 }
 
 .station-title{
-    text-align:center;
-    font-family:'Permanent Marker',cursive;
-    font-size:36px;
-    margin-bottom:40px;
+text-align:center;
+font-family:'Permanent Marker',cursive;
+font-size:36px;
+margin-bottom:40px;
 }
 
 .music-station{
-    display:grid;
-    grid-template-columns:2fr 1fr;
-    gap:25px;
+display:grid;
+grid-template-columns:2fr 1fr;
+gap:25px;
 }
-
-/* PLAYER */
 
 .player-box{
-    background:#181818;
-    border-radius:30px;
-    overflow:hidden;
-    border:1px solid rgba(255,255,255,0.08);
-
-    box-shadow:
-0 0 30px rgba(255,0,0,0.18),
-0 0 80px rgba(255,0,0,0.08),
-inset 0 0 30px rgba(255,255,255,0.02);
+background:#181818;
+border-radius:30px;
+overflow:hidden;
+border:1px solid rgba(255,255,255,.08);
+box-shadow:
+0 0 30px rgba(255,0,0,.18),
+0 0 80px rgba(255,0,0,.08),
+inset 0 0 30px rgba(255,255,255,.02);
 }
+
     /* LIVE */
 
 .live-indicator{
 
-    position:absolute;
+position:absolute;
+top:18px;
+left:18px;
 
-    top:18px;
-    left:18px;
+z-index:5;
 
-    z-index:5;
+background:rgba(0,0,0,.65);
 
-    background:rgba(0,0,0,.65);
+padding:8px 14px;
 
-    padding:8px 14px;
+border-radius:30px;
 
-    border-radius:30px;
+font-size:13px;
 
-    font-size:13px;
+letter-spacing:1px;
 
-    letter-spacing:1px;
+backdrop-filter:blur(10px);
 
-    backdrop-filter:blur(10px);
 }
 
 .live-dot{
 
-    width:10px;
-    height:10px;
+width:10px;
+height:10px;
 
-    background:#ff2020;
+background:#ff2020;
 
-    border-radius:50%;
+border-radius:50%;
 
-    display:inline-block;
+display:inline-block;
 
-    margin-right:8px;
+margin-right:8px;
 
-    animation:livePulse 1.4s infinite;
+animation:livePulse 1.4s infinite;
+
 }
 
 @keyframes livePulse{
 
-    0%{
-        transform:scale(1);
-        opacity:1;
-    }
+0%{
+transform:scale(1);
+opacity:1;
+}
 
-    50%{
-        transform:scale(1.6);
-        opacity:.45;
-    }
+50%{
+transform:scale(1.6);
+opacity:.45;
+}
 
-    100%{
-        transform:scale(1);
-        opacity:1;
-    }
+100%{
+transform:scale(1);
+opacity:1;
+}
+
 }
 
 .cover-area{
 
-    position:relative;
+position:relative;
 
-    overflow:hidden;
+overflow:hidden;
 
 }
 
 .cover-area::after{
 
-    content:"";
+content:"";
 
-    position:absolute;
+position:absolute;
 
-    inset:0;
+inset:0;
 
-    background:
-    linear-gradient(
-        115deg,
-        rgba(255,255,255,.16),
-        transparent 35%
-    );
+background:
+linear-gradient(
+115deg,
+rgba(255,255,255,.16),
+transparent 35%
+);
 
-    pointer-events:none;
+pointer-events:none;
 
 }
 
 .cover-area img{
 
-    width:100%;
-    display:block;
+width:100%;
 
-    animation:coverGlow 4s infinite;
-}
+display:block;
 
-    @keyframes coverGlow{
-
-    0%{
-        box-shadow:
-        0 0 10px rgba(255,0,0,.15);
-    }
-
-    50%{
-        box-shadow:
-        0 0 35px rgba(255,0,0,.45);
-    }
-
-    100%{
-        box-shadow:
-        0 0 10px rgba(255,0,0,.15);
-    }
-    }
-
-    .cover-fade{
-
-    animation:fadeCover .5s ease;
+animation:coverGlow 4s infinite;
 
 }
 
-@keyframes fadeCover{
+@keyframes coverGlow{
 
-    from{
+0%{
+box-shadow:0 0 10px rgba(255,0,0,.15);
+}
 
-        opacity:.2;
-        transform:scale(.98);
+50%{
+box-shadow:0 0 35px rgba(255,0,0,.45);
+}
 
-    }
-
-    to{
-
-        opacity:1;
-        transform:scale(1);
-
-    }
+100%{
+box-shadow:0 0 10px rgba(255,0,0,.15);
+}
 
 }
 
-    .cover-fade{
+.cover-fade{
 
-    animation:fadeCover .5s ease;
+animation:fadeCover .5s ease;
+
 }
 
 @keyframes fadeCover{
 
-    from{
+from{
 
-        opacity:.2;
-        transform:scale(.98);
+opacity:.2;
+transform:scale(.98);
 
-    }
+}
 
-    to{
+to{
 
-        opacity:1;
-        transform:scale(1);
+opacity:1;
+transform:scale(1);
 
-    }
+}
+
 }
 
 .cover-glass{
-    position:absolute;
-    inset:0;
-    background:
-    linear-gradient(
-        120deg,
-        rgba(255,255,255,0.18),
-        transparent 40%
-    );
-    pointer-events:none;
+
+position:absolute;
+
+inset:0;
+
+background:
+linear-gradient(
+120deg,
+rgba(255,255,255,.18),
+transparent 40%
+);
+
+pointer-events:none;
+
 }
 
 .song-info{
-    padding:22px;
-    text-align:center;
+
+padding:22px;
+
+text-align:center;
+
 }
 
 .now-playing{
-    color:#999;
-    font-size:14px;
-    letter-spacing:2px;
-    margin-bottom:10px;
+
+color:#999;
+
+font-size:14px;
+
+letter-spacing:2px;
+
+margin-bottom:10px;
+
 }
 
 .song-title{
-    font-size:28px;
-    font-weight:bold;
+
+font-size:28px;
+
+font-weight:bold;
+
 }
-    .song-artist{
 
-    margin-top:10px;
+.song-artist{
 
-    color:#bdbdbd;
+margin-top:10px;
 
-    font-size:16px;
+color:#bdbdbd;
 
-    letter-spacing:1px;
+font-size:16px;
+
+letter-spacing:1px;
 
 }
 
 .song-badge{
 
-    display:inline-block;
+display:inline-block;
 
-    margin-top:14px;
+margin-top:14px;
 
-    padding:8px 18px;
+padding:8px 18px;
 
-    border-radius:30px;
+border-radius:30px;
 
-    background:linear-gradient(
-        135deg,
-        rgba(255,40,40,.22),
-        rgba(255,120,120,.10)
-    );
+background:
+linear-gradient(
+135deg,
+rgba(255,40,40,.22),
+rgba(255,120,120,.10)
+);
 
-    border:1px solid rgba(255,80,80,.35);
+border:1px solid rgba(255,80,80,.35);
 
-    color:#fff;
+color:#fff;
 
-    font-size:13px;
+font-size:13px;
 
-    font-weight:bold;
+font-weight:bold;
 
-    letter-spacing:1.2px;
+letter-spacing:1.2px;
 
-    box-shadow:
-        0 0 16px rgba(255,0,0,.18);
+box-shadow:0 0 16px rgba(255,0,0,.18);
 
-    animation:badgeGlow 3s infinite;
+animation:badgeGlow 3s infinite;
 
 }
 
 /* VISUALIZER */
 
 .visualizer-wrap{
-    padding:0 20px 20px;
+
+padding:0 20px 20px;
+
 }
 
 #visualizer{
-    width:100%;
-    height:120px;
-    display:block;
+
+width:100%;
+
+height:120px;
+
+display:block;
+
 }
 
 /* CONTROLS */
 
 .controls{
-    display:flex;
-    justify-content:center;
-    padding:0 0 30px;
+
+display:flex;
+
+justify-content:center;
+
+gap:18px;
+
+padding:0 0 30px;
+
 }
 
-    #prevBtn,
+#prevBtn,
 #nextBtn{
 
-    width:58px;
-    height:58px;
+width:58px;
+height:58px;
 
-    border:none;
+border:none;
 
-    border-radius:50%;
+border-radius:50%;
 
-    background:
-    rgba(255,255,255,.08);
+background:rgba(255,255,255,.08);
 
-    color:white;
+color:white;
 
-    font-size:22px;
+font-size:22px;
 
-    cursor:pointer;
+cursor:pointer;
 
-    transition:.25s;
+transition:.25s;
 
 }
 
-  #prevBtn:hover,
+#prevBtn:hover,
 #nextBtn:hover{
 
-    transform:translateY(-3px);
+transform:translateY(-3px);
 
-    box-shadow:
-    0 0 18px rgba(255,0,0,.55);
+box-shadow:0 0 18px rgba(255,0,0,.55);
 
-}  
+}
 
 .play-btn{
 
-    width:72px;
-    height:72px;
+width:72px;
+height:72px;
 
-    border:none;
+border:none;
 
-    border-radius:50%;
+border-radius:50%;
 
-    background:#ff2424;
+background:#ff2424;
 
-    color:white;
+color:white;
 
-    font-size:26px;
+font-size:26px;
 
-    cursor:pointer;
+cursor:pointer;
 
-    transition:.3s;
+transition:.3s;
 
-    box-shadow:
-    0 0 22px rgba(255,0,0,.7);
+box-shadow:0 0 22px rgba(255,0,0,.7);
 
 }
 
 .play-btn:hover{
 
-    transform:
-    scale(1.08)
-    translateY(-2px);
+transform:scale(1.08) translateY(-2px);
 
 }
-    .time-info{
 
-    display:flex;
+.time-info{
 
-    justify-content:space-between;
+display:flex;
 
-    margin-top:10px;
+justify-content:space-between;
 
-    font-size:14px;
+margin-top:10px;
 
-    color:#ddd;
+font-size:14px;
 
-    }
+color:#ddd;
 
-    #progressBar{
+}
 
-    width:100%;
+#progressBar{
 
-    margin-top:10px;
+width:100%;
 
-    cursor:pointer;
+margin-top:10px;
 
-    -webkit-appearance:none;
+cursor:pointer;
 
-    appearance:none;
+appearance:none;
 
-    height:6px;
+height:6px;
 
-    border-radius:20px;
+border-radius:20px;
 
-    background:
-    rgba(255,255,255,.12);
+background:rgba(255,255,255,.12);
 
-    }
+}
 
-    #progressBar::-webkit-slider-thumb{
+#progressBar::-webkit-slider-thumb{
 
-    -webkit-appearance:none;
+appearance:none;
 
-    width:18px;
-    height:18px;
+width:18px;
+height:18px;
 
-    border-radius:50%;
+border-radius:50%;
 
-    background:#ff2d2d;
+background:#ff2d2d;
 
-    box-shadow:
-    0 0 15px rgba(255,0,0,.7);
+box-shadow:0 0 15px rgba(255,0,0,.7);
 
-    cursor:pointer;
-    }
+cursor:pointer;
+
+}
 
 /* PLAYLIST */
 
 .playlist{
-    background:#181818;
-    border-radius:30px;
-    overflow:hidden;
-    border:1px solid rgba(255,255,255,0.08);
+
+background:#181818;
+
+border-radius:30px;
+
+overflow:hidden;
+
+border:1px solid rgba(255,255,255,.08);
+
 }
 
 .playlist-header{
-    padding:25px;
-    text-align:center;
-    font-family:'Permanent Marker',cursive;
-    font-size:26px;
+
+padding:25px;
+
+text-align:center;
+
+font-family:'Permanent Marker',cursive;
+
+font-size:26px;
+
 }
 
 .track{
-    display:flex;
-    gap:14px;
-    align-items:center;
-    padding:16px;
-    cursor:pointer;
-    transition:.3s;
-    border-top:1px solid rgba(255,255,255,0.05);
+
+display:flex;
+
+gap:14px;
+
+align-items:center;
+
+padding:16px;
+
+cursor:pointer;
+
+transition:.3s;
+
+border-top:1px solid rgba(255,255,255,.05);
+
 }
 
 .track:hover{
-    background:rgba(255,0,0,0.12);
+
+background:rgba(255,0,0,.12);
+
 }
 
 .track.active{
 
-    background:rgba(255,0,0,0.12);
+background:rgba(255,0,0,.12);
 
-    border-left:4px solid #ff3b3b;
+border-left:4px solid #ff3b3b;
 
-    box-shadow:
-    0 0 20px rgba(255,0,0,0.18);
+box-shadow:0 0 20px rgba(255,0,0,.18);
 
-    animation:
-    trackPulse 2.5s infinite;
+animation:trackPulse 2.5s infinite;
 
 }
 
 .track img{
-    width:70px;
-    height:70px;
-    object-fit:cover;
-    border-radius:12px;
+
+width:70px;
+
+height:70px;
+
+object-fit:cover;
+
+border-radius:12px;
+
+}
+
+.track-info{
+
+display:flex;
+
+flex-direction:column;
+
+justify-content:center;
+
+flex:1;
+
 }
 
 .track-name{
-    font-size:15px;
-    line-height:1.5;
-}
 
-    .track-info{
+font-size:15px;
 
-    display:flex;
-
-    flex-direction:column;
-
-    justify-content:center;
-
-    flex:1;
+line-height:1.5;
 
 }
 
 .track-status{
 
-    font-size:11px;
+font-size:11px;
 
-    letter-spacing:1px;
+letter-spacing:1px;
 
-    color:#888;
+color:#888;
 
-    margin-top:4px;
+margin-top:4px;
 
 }
 
-    .track.active .track-status{
+.track.active .track-status{
 
-    color:#ff4d4d;
+color:#ff4d4d;
 
-    font-weight:bold;
+font-weight:bold;
 
-    }
+}
 
-/* QUOTE */
+    /* QUOTE */
 
 .quote-section{
-    padding:90px 25px;
-    text-align:center;
+
+padding:90px 25px;
+
+text-align:center;
+
 }
 
 .quote{
-    max-width:900px;
-    margin:auto;
-    font-size:30px;
-    line-height:1.8;
-    font-style:italic;
-    color:#ddd;
+
+max-width:900px;
+
+margin:auto;
+
+font-size:30px;
+
+line-height:1.8;
+
+font-style:italic;
+
+color:#ddd;
+
 }
 
 .quote-author{
-    margin-top:20px;
-    color:#999;
+
+margin-top:20px;
+
+color:#999;
+
 }
 
 /* FOOTER */
 
 .footer{
-    background:#0a0a0a;
-    text-align:center;
-    padding:55px 20px;
+
+background:#0a0a0a;
+
+text-align:center;
+
+padding:55px 20px;
+
 }
 
 .footer-logo{
-    font-family:'Permanent Marker',cursive;
-    font-size:34px;
-    margin-bottom:18px;
-    letter-spacing:2px;
+
+font-family:'Permanent Marker',cursive;
+
+font-size:34px;
+
+margin-bottom:18px;
+
+letter-spacing:2px;
+
 }
 
 .footer-logo .black-t{
-    color:#000;
-    -webkit-text-stroke:1px #fff;
+
+color:#000;
+
+-webkit-text-stroke:1px #fff;
+
 }
 
 .footer-logo .split-a{
-    background:linear-gradient(
-        to right,
-        #ffd400 0%,
-        #ffd400 50%,
-        #ff2d2d 50%,
-        #ff2d2d 100%
-    );
-    -webkit-background-clip:text;
-    -webkit-text-fill-color:transparent;
+
+background:linear-gradient(
+to right,
+#ffd400 0%,
+#ffd400 50%,
+#ff2d2d 50%,
+#ff2d2d 100%
+);
+
+-webkit-background-clip:text;
+
+-webkit-text-fill-color:transparent;
+
 }
 
 .footer-logo .pink-m{
-    color:#ff4fa3;
+
+color:#ff4fa3;
+
 }
 
 .footer-quote{
-    color:#999;
-    font-size:16px;
-    line-height:1.8;
-    max-width:700px;
-    margin:auto auto 35px auto;
+
+color:#999;
+
+font-size:16px;
+
+line-height:1.8;
+
+max-width:700px;
+
+margin:auto auto 35px;
+
 }
 
 .footer-social{
-    display:flex;
-    justify-content:center;
-    gap:20px;
-    margin-bottom:30px;
-    flex-wrap:wrap;
+
+display:flex;
+
+justify-content:center;
+
+gap:20px;
+
+margin-bottom:30px;
+
+flex-wrap:wrap;
+
 }
 
 .footer-social a{
-    color:white;
-    font-size:22px;
-    transition:.3s;
+
+color:white;
+
+font-size:22px;
+
+transition:.3s;
+
 }
 
 .footer-social a:hover{
-    transform:scale(1.2);
-    color:#ff4444;
+
+transform:scale(1.2);
+
+color:#ff4444;
+
 }
 
 .footer-copy{
-    color:#666;
-    font-size:14px;
+
+color:#666;
+
+font-size:14px;
+
 }
 
 /* MOBILE */
 
 @media(max-width:900px){
 
-    .music-station{
-        grid-template-columns:1fr;
-    }
+.music-station{
 
-    .hero-title{
-        font-size:42px;
-    }
+grid-template-columns:1fr;
 
-    .station-title{
-        font-size:28px;
-    }
-
-    .song-title{
-        font-size:22px;
-    }
-
-    .quote{
-        font-size:22px;
-    }
 }
-    @keyframes trackPulse{
 
-    0%{
+.hero-title{
 
-        box-shadow:
-        0 0 15px rgba(255,0,0,0.12);
+font-size:42px;
 
-    }
+}
 
-    50%{
+.station-title{
 
-        box-shadow:
-        0 0 28px rgba(255,0,0,0.28);
+font-size:28px;
 
-    }
+}
 
-    100%{
+.song-title{
 
-        box-shadow:
-        0 0 15px rgba(255,0,0,0.12);
+font-size:22px;
 
-    }
+}
 
-    }
+.quote{
 
-    @keyframes badgeGlow{
+font-size:22px;
 
-    0%{
+}
 
-        box-shadow:
-        0 0 10px rgba(255,0,0,.15);
+}
 
-    }
+@keyframes trackPulse{
 
-    50%{
+0%{
 
-        box-shadow:
-        0 0 24px rgba(255,0,0,.40);
+box-shadow:0 0 15px rgba(255,0,0,.12);
 
-    }
+}
 
-    100%{
+50%{
 
-        box-shadow:
-        0 0 10px rgba(255,0,0,.15);
+box-shadow:0 0 28px rgba(255,0,0,.28);
 
-    }
+}
 
-    }
+100%{
+
+box-shadow:0 0 15px rgba(255,0,0,.12);
+
+}
+
+}
+
+@keyframes badgeGlow{
+
+0%{
+
+box-shadow:0 0 10px rgba(255,0,0,.15);
+
+}
+
+50%{
+
+box-shadow:0 0 24px rgba(255,0,0,.40);
+
+}
+
+100%{
+
+box-shadow:0 0 10px rgba(255,0,0,.15);
+
+}
+
+}
 
 </style>
-</head>
-    <body>
 
+</head>
+
+<body>
 <!-- HERO -->
 
 <section class="hero">
 
-    <img src="muzica.png" alt="Muzica">
+<img src="muzica.png" alt="Muzica">
 
-    <div class="hero-content">
+<div class="hero-content">
 
-        <div class="hero-title">
-            MUZICA
-        </div>
+<div class="hero-title">
+MUZICA
+</div>
 
-        <div class="hero-subtitle">
-            Universul #TAM
-        </div>
+<div class="hero-subtitle">
+Universul #TAM
+</div>
 
-    </div>
+</div>
 
 </section>
 
@@ -805,13 +895,13 @@ inset 0 0 30px rgba(255,255,255,0.02);
 
 <section class="back-section">
 
-    <a href="index.html" class="back-btn">
+<a href="index.html" class="back-btn">
 
-        <i class="fas fa-arrow-left"></i>
+<i class="fas fa-arrow-left"></i>
 
-        Înapoi acasă
+Inapoi acasa
 
-    </a>
+</a>
 
 </section>
 
@@ -819,16 +909,16 @@ inset 0 0 30px rgba(255,255,255,0.02);
 
 <section class="intro">
 
-    <div class="intro-title">
-        Muzica ne uneste
-    </div>
+<div class="intro-title">
+Muzica ne uneste
+</div>
 
-    <div class="intro-text">
+<div class="intro-text">
 
-        Muzica ne curge prin vene, iar inimile noastre bat pe beat.
-        Universul #TAM se bazează pe asta.
+Muzica ne curge prin vene, iar inimile noastre bat pe beat.
+Universul #TAM se bazeaza pe asta.
 
-    </div>
+</div>
 
 </section>
 
@@ -836,380 +926,434 @@ inset 0 0 30px rgba(255,255,255,0.02);
 
 <section class="station-section">
 
-    <div class="station-title">
-        TAM Music Station
-    </div>
+<div class="station-title">
+TAM Music Station
+</div>
 
-    <div class="music-station">
+<div class="music-station">
 
-        <!-- PLAYER -->
+<!-- PLAYER -->
 
-        <div class="player-box">
+<div class="player-box">
 
-            <div class="live-indicator">
+<div class="live-indicator">
 
-    <span class="live-dot"></span>
+<span class="live-dot"></span>
 
-    LIVE • TAM MUSIC STATION
-
-            </div>
-
-            <div class="cover-area">
-
-                <img
-                    id="coverImage"
-                    src="soavslil0.png"
-                    alt="cover">
-
-                <div class="cover-glass"></div>
-
-            </div>
-
-            <div class="song-info">
-
-    <div class="now-playing">
-        NOW PLAYING
-    </div>
-
-    <div
-        id="songTitle"
-        class="song-title">
-
-        ȘOA vs LIL
-
-    </div>
-
-    <div
-        id="songArtist"
-        class="song-artist">
-
-        Universul #TAM
-
-    </div>
-
-    <div
-        id="songBadge"
-        class="song-badge">
-
-        ⚽ TAM FOOTBALL
-
-    </div>
+LIVE • TAM MUSIC STATION
 
 </div>
 
-            <div class="visualizer-wrap">
+<div class="cover-area">
 
-                <canvas id="visualizer"></canvas>
+<img
+id="coverImage"
+src="povesti.png"
+alt="cover">
 
-            </div>
+<div class="cover-glass"></div>
 
-            <div class="controls">
+</div>
 
-                <button id="prevBtn">⏮</button>
+<div class="song-info">
 
-                <button
-                    id="playBtn"
-                    class="play-btn">
+<div class="now-playing">
 
-                    <i class="fas fa-pause"></i>
+NOW PLAYING
 
-                </button>
-                <button id="nextBtn">⏭</button>
+</div>
 
-            </div>
-            <div class="time-info">
+<div
+id="songTitle"
+class="song-title">
 
-    <span id="currentTime">
-        0:00
-    </span>
+Primul Draft
 
-    <span id="duration">
-        0:00
-    </span>
+</div>
+
+<div
+id="songArtist"
+class="song-artist">
+
+Universul #TAM
+
+</div>
+
+<div
+id="songBadge"
+class="song-badge">
+
+🐉 TAM STORIES
+
+</div>
+
+</div>
+
+<div class="visualizer-wrap">
+
+<canvas id="visualizer"></canvas>
+
+</div>
+
+<div class="controls">
+
+<button id="prevBtn">
+
+⏮
+
+</button>
+
+<button
+id="playBtn"
+class="play-btn">
+
+<i class="fas fa-pause"></i>
+
+</button>
+
+<button id="nextBtn">
+
+⏭
+
+</button>
+
+</div>
+
+<div class="time-info">
+
+<span id="currentTime">
+
+0:00
+
+</span>
+
+<span id="duration">
+
+0:00
+
+</span>
 
 </div>
 
 <input
-    type="range"
-    id="progressBar"
-    value="0"
->
+type="range"
+id="progressBar"
+value="0">
 
-        </div>
+</div>
 
-        <!-- PLAYLIST -->
+<!-- PLAYLIST -->
 
 <div class="playlist">
 
-    <div class="playlist-header">
-        Playlist
-    </div>
+<div class="playlist-header">
 
-    <div
-        class="track active"
-        data-index="0">
+Playlist
 
-        <img src="jocuri.png">
+</div>
 
-        <div class="track-info">
+<div class="track active" data-index="0">
 
-            <div class="track-name">
-                Încă un nivel
-            </div>
+<img src="povesti.png">
 
-            <div class="track-status">
-                🎮 TAM GAMES
-            </div>
+<div class="track-info">
 
-        </div>
+<div class="track-name">
 
-    </div>
+Primul Draft
 
-    <div
-        class="track"
-        data-index="1">
+</div>
 
-        <img src="benzidesenate.png">
+<div class="track-status">
 
-        <div class="track-info">
+🐉 TAM STORIES
 
-            <div class="track-name">
-                Benzi Desenate
-            </div>
+</div>
 
-            <div class="track-status">
-                💥 TAM COMICS
-            </div>
+</div>
 
-        </div>
+</div>
 
-    </div>
+<div class="track" data-index="1">
 
-    <div
-        class="track"
-        data-index="2">
+<img src="puzzle.png">
 
-        <img src="soavslil0.png">
+<div class="track-info">
 
-        <div class="track-info">
+<div class="track-name">
 
-            <div class="track-name">
-                ȘOA vs LIL
-            </div>
+Piesa cu piesa
 
-            <div class="track-status">
-                ⚽ TAM FOOTBALL
-            </div>
+</div>
 
-        </div>
+<div class="track-status">
 
-    </div>
+🧩 TAM PUZZLE
 
-    <div
-        class="track"
-        data-index="3">
+</div>
 
-        <img src="desprenoi.png">
+</div>
 
-        <div class="track-info">
+</div>
 
-            <div class="track-name">
-                Poveste. Viață. Familie
-            </div>
+<div class="track" data-index="2">
 
-            <div class="track-status">
-                📖 TAM STORY
-            </div>
+<img src="jocuri.png">
 
-        </div>
+<div class="track-info">
 
-    </div>
+<div class="track-name">
 
-    <div
-        class="track"
-        data-index="4">
+Inca un nivel
 
-        <img src="cover.png">
+</div>
 
-        <div class="track-info">
+<div class="track-status">
 
-            <div class="track-name">
-                Bine ai venit în Universul #TAM
-            </div>
+🎮 TAM GAMES
 
-            <div class="track-status">
-                ✨ TAM INTRO
-            </div>
+</div>
 
-        </div>
+</div>
 
-    </div>
+</div>
 
-    <div
-    class="track"
-    data-index="5">
+    <div class="track" data-index="3">
 
-    <img src="puzzle.png">
+<img src="benzidesenate.png">
 
-    <div class="track-info">
+<div class="track-info">
 
-        <div class="track-name">
-            Piesă cu piesă
-        </div>
+<div class="track-name">
 
-        <div class="track-status">
-            🧩 TAM PUZZLE
-        </div>
+Benzi Desenate
 
-    </div>
+</div>
 
-    </div>
+<div class="track-status">
+
+💥 TAM COMICS
+
+</div>
+
+</div>
+
+</div>
+
+<div class="track" data-index="4">
+
+<img src="soavslil0.png">
+
+<div class="track-info">
+
+<div class="track-name">
+
+SOA vs LIL
+
+</div>
+
+<div class="track-status">
+
+⚽ TAM FOOTBALL
+
+</div>
+
+</div>
+
+</div>
+
+<div class="track" data-index="5">
+
+<img src="desprenoi.png">
+
+<div class="track-info">
+
+<div class="track-name">
+
+Poveste. Viata. Familie
+
+</div>
+
+<div class="track-status">
+
+📖 TAM STORY
+
+</div>
+
+</div>
+
+</div>
+
+<div class="track" data-index="6">
+
+<img src="cover.png">
+
+<div class="track-info">
+
+<div class="track-name">
+
+Bine ai venit in Universul #TAM
+
+</div>
+
+<div class="track-status">
+
+✨ TAM INTRO
+
+</div>
+
+</div>
+
+</div>
 
 </div>
 
 </div>
 
 </section>
-
-<!-- AUDIO -->
 
 <audio id="audioPlayer"></audio>
 
-<!-- QUOTE -->
-
 <section class="quote-section">
 
-    <div class="quote">
+<div class="quote">
 
-        „Viața este ca o interpretare la vioară în public,
-        unde trebuie să înveți să cânți la instrument
-        pe măsură ce avansezi.”
+„Viata este ca o interpretare la vioara in public,
+unde trebuie sa inveti sa canti la instrument
+pe masura ce avansezi.”
 
-    </div>
+</div>
 
-    <div class="quote-author">
+<div class="quote-author">
 
-        — Albert Einstein
+— Albert Einstein
 
-    </div>
+</div>
 
 </section>
 
-<!-- FOOTER -->
-
 <footer class="footer">
 
-    <div class="footer-logo">
-        #<span class="black-t">T</span><span class="split-a">A</span><span class="pink-m">M</span> Universe
-    </div>
+<div class="footer-logo">
 
-    <div class="footer-quote">
-        Știm că este puțin, dar orice construcție se realizează în timp.
-    </div>
+#<span class="black-t">T</span><span class="split-a">A</span><span class="pink-m">M</span> Universe
 
-    <div class="footer-social">
+</div>
 
-        <a href="https://youtube.com/@tam958universe?si=tH4ilL0TK9Gzuht8" target="_blank">
-            <i class="fab fa-youtube"></i>
-        </a>
+<div class="footer-quote">
 
-        <a href="https://www.facebook.com/share/18qTg2ix7w/" target="_blank">
-            <i class="fab fa-facebook-f"></i>
-        </a>
+Stim ca este putin, dar orice constructie se realizeaza in timp.
 
-        <a href="https://www.tiktok.com/@tam.universe?_r=1&_t=ZN-96V6I3qpKKc" target="_blank">
-            <i class="fab fa-tiktok"></i>
-        </a>
+</div>
 
-        <a href="https://www.instagram.com/958.tam.fam?igsh=MWE1OWh0eWlubDBuMw==" target="_blank">
-            <i class="fab fa-instagram"></i>
-        </a>
+<div class="footer-social">
 
-        <a href="https://x.com/TAM958Universe" target="_blank">
-            <i class="fab fa-x-twitter"></i>
-        </a>
+<a href="https://youtube.com/@tam958universe?si=tH4ilL0TK9Gzuht8" target="_blank">
+<i class="fab fa-youtube"></i>
+</a>
 
-        <a href="https://whatsapp.com/channel/0029Vb7raMh1t90jV21u1t3X" target="_blank">
-            <i class="fab fa-whatsapp"></i>
-        </a>
+<a href="https://www.facebook.com/share/18qTg2ix7w/" target="_blank">
+<i class="fab fa-facebook-f"></i>
+</a>
 
-    </div>
+<a href="https://www.tiktok.com/@tam.universe?_r=1&_t=ZN-96V6I3qpKKc" target="_blank">
+<i class="fab fa-tiktok"></i>
+</a>
 
-    <div class="footer-copy">
-        © 2026 #TAM
-    </div>
+<a href="https://www.instagram.com/958.tam.fam?igsh=MWE1OWh0eWlubDBuMw==" target="_blank">
+<i class="fab fa-instagram"></i>
+</a>
+
+<a href="https://x.com/TAM958Universe" target="_blank">
+<i class="fab fa-x-twitter"></i>
+</a>
+
+<a href="https://whatsapp.com/channel/0029Vb7raMh1t90jV21u1t3X" target="_blank">
+<i class="fab fa-whatsapp"></i>
+</a>
+
+</div>
+
+<div class="footer-copy">
+
+© 2026 #TAM
+
+</div>
 
 </footer>
 
-        <script>
+<script>
 
-const songs = [
+const songs=[
 
 {
-    title:"Încă un nivel",
-    artist:"Universul #TAM",
-    badge:"🎮 TAM GAMES",
-    file:"jocuri.mp3",
-    cover:"jocuri.png"
+title:"Primul Draft",
+artist:"Universul #TAM",
+badge:"🐉 TAM STORIES",
+file:"povesti.mp3",
+cover:"povesti.png"
 },
 
 {
-    title:"Benzi Desenate",
-    artist:"Universul #TAM",
-    badge:"💥 TAM COMICS",
-    file:"benzidesenate.mp3",
-    cover:"benzidesenate.png"
+title:"Piesa cu piesa",
+artist:"Universul #TAM",
+badge:"🧩 TAM PUZZLE",
+file:"puzzle.mp3",
+cover:"puzzle.png"
 },
 
 {
-    title:"ȘOA vs LIL",
-    artist:"Universul #TAM",
-    badge:"⚽ TAM FOOTBALL",
-    file:"soavslil.mp3",
-    cover:"soavslil0.png"
+title:"Inca un nivel",
+artist:"Universul #TAM",
+badge:"🎮 TAM GAMES",
+file:"jocuri.mp3",
+cover:"jocuri.png"
 },
 
 {
-    title:"Poveste. Viață. Familie",
-    artist:"Universul #TAM",
-    badge:"📖 TAM STORY",
-    file:"desprenoi.mp3",
-    cover:"desprenoi.png"
+title:"Benzi Desenate",
+artist:"Universul #TAM",
+badge:"💥 TAM COMICS",
+file:"benzidesenate.mp3",
+cover:"benzidesenate.png"
 },
 
 {
-    title:"Bine ai venit în Universul #TAM",
-    artist:"Universul #TAM",
-    badge:"✨ TAM INTRO",
-    file:"music.mp3",
-    cover:"cover.png"
+title:"SOA vs LIL",
+artist:"Universul #TAM",
+badge:"⚽ TAM FOOTBALL",
+file:"soavslil.mp3",
+cover:"soavslil0.png"
 },
+
 {
-    title:"Piesă cu piesă",
-    artist:"Universul #TAM",
-    badge:"🧩 TAM PUZZLE",
-    file:"puzzle.mp3",
-    cover:"puzzle.png"
+title:"Poveste. Viata. Familie",
+artist:"Universul #TAM",
+badge:"📖 TAM STORY",
+file:"desprenoi.mp3",
+cover:"desprenoi.png"
+},
+
+{
+title:"Bine ai venit in Universul #TAM",
+artist:"Universul #TAM",
+badge:"✨ TAM INTRO",
+file:"music.mp3",
+cover:"cover.png"
 }
 
 ];
 
-const audio = document.getElementById("audioPlayer");
+    const audio = document.getElementById("audioPlayer");
 
-            const progressBar =
-document.getElementById(
-    "progressBar"
-);
+const progressBar =
+document.getElementById("progressBar");
 
 const currentTimeDisplay =
-document.getElementById(
-    "currentTime"
-);
+document.getElementById("currentTime");
 
 const durationDisplay =
-document.getElementById(
-    "duration"
-);
+document.getElementById("duration");
 
 const coverImage =
 document.getElementById("coverImage");
@@ -1217,7 +1361,7 @@ document.getElementById("coverImage");
 const songTitle =
 document.getElementById("songTitle");
 
-            const songArtist =
+const songArtist =
 document.getElementById("songArtist");
 
 const songBadge =
@@ -1229,30 +1373,8 @@ document.getElementById("prevBtn");
 const playBtn =
 document.getElementById("playBtn");
 
-            const nextBtn =
+const nextBtn =
 document.getElementById("nextBtn");
-
-            nextBtn.addEventListener(
-    "click",
-    () => {
-
-        currentSong++;
-
-        if(
-            currentSong >=
-            songs.length
-        ){
-
-            currentSong = 0;
-
-        }
-
-        loadSong(currentSong);
-
-        audio.play();
-
-    }
-);
 
 const tracks =
 document.querySelectorAll(".track");
@@ -1260,15 +1382,11 @@ document.querySelectorAll(".track");
 let currentSong = 0;
 let isPlaying = false;
 
-/* AUDIO API */
-
 let audioContext;
 let analyser;
 let source;
 let dataArray;
 let animationId;
-
-/* CANVAS */
 
 const canvas =
 document.getElementById("visualizer");
@@ -1278,401 +1396,354 @@ canvas.getContext("2d");
 
 function resizeCanvas(){
 
-    canvas.width =
-    canvas.offsetWidth;
+canvas.width =
+canvas.offsetWidth;
 
-    canvas.height =
-    canvas.offsetHeight;
+canvas.height =
+canvas.offsetHeight;
+
 }
 
 resizeCanvas();
 
 window.addEventListener(
-    "resize",
-    resizeCanvas
+"resize",
+resizeCanvas
 );
-
-            prevBtn.addEventListener(
-    "click",
-    () => {
-
-        currentSong--;
-
-        if(currentSong < 0){
-
-            currentSong =
-            songs.length - 1;
-
-        }
-
-        loadSong(currentSong);
-
-        audio.play();
-
-    }
-);
-
-/* LOAD SONG */
 
 function loadSong(index){
 
-    currentSong = index;
+currentSong = index;
 
-    audio.src =
-    songs[index].file;
+audio.src =
+songs[index].file;
 
-    coverImage.src =
-    songs[index].cover;
+coverImage.src =
+songs[index].cover;
 
-    coverImage.classList.remove(
-    "cover-fade"
-);
+coverImage.classList.remove("cover-fade");
 
 void coverImage.offsetWidth;
 
-coverImage.classList.add(
-    "cover-fade"
-);
+coverImage.classList.add("cover-fade");
 
-    songTitle.textContent =
-    songs[index].title;
+songTitle.textContent =
+songs[index].title;
 
-    songArtist.textContent =
+songArtist.textContent =
 songs[index].artist;
 
 songBadge.textContent =
 songs[index].badge;
 
-    tracks.forEach(track =>
-        track.classList.remove("active")
-    );
+tracks.forEach(track=>{
 
-    tracks[index]
-    .classList.add("active");
-}
-            function formatTime(seconds){
-
-    const mins =
-    Math.floor(seconds / 60);
-
-    const secs =
-    Math.floor(seconds % 60);
-
-    return (
-        mins +
-        ":" +
-        String(secs)
-        .padStart(2,"0")
-    );
-
-            }
-
-/* PLAY */
-
-async function playSong(){
-
-    try{
-
-        if(!audioContext){
-
-            setupAudio();
-        }
-
-        await audioContext.resume();
-
-        await audio.play();
-
-        fadeInVolume();
-
-        isPlaying = true;
-
-        playBtn.innerHTML =
-        '<i class="fas fa-pause"></i>';
-
-        drawVisualizer();
-
-    }catch(err){
-
-        console.log(err);
-    }
-}
-
-/* PAUSE */
-
-function pauseSong(){
-
-    audio.pause();
-
-    isPlaying = false;
-
-    playBtn.innerHTML =
-    '<i class="fas fa-play"></i>';
-}
-
-/* BUTTON */
-
-playBtn.addEventListener(
-    "click",
-    () => {
-
-        if(isPlaying){
-
-            pauseSong();
-
-        }else{
-
-            playSong();
-        }
-    }
-);
-            audio.addEventListener(
-    "timeupdate",
-    () => {
-
-        progressBar.value =
-        (
-            audio.currentTime /
-            audio.duration
-        ) * 100 || 0;
-
-        currentTimeDisplay.textContent =
-        formatTime(
-            audio.currentTime
-        );
-
-        durationDisplay.textContent =
-        formatTime(
-            audio.duration || 0
-        );
-
-    }
-);
-            progressBar.addEventListener(
-    "input",
-    () => {
-
-        audio.currentTime =
-        (
-            progressBar.value /
-            100
-        ) * audio.duration;
-
-    }
-);
-
-/* PLAYLIST CLICK */
-
-tracks.forEach(track => {
-
-    track.addEventListener(
-        "click",
-        async () => {
-
-            const index =
-            Number(
-                track.dataset.index
-            );
-
-            loadSong(index);
-
-            await playSong();
-        }
-    );
+track.classList.remove("active");
 
 });
 
-/* NEXT SONG */
-
-audio.addEventListener(
-    "ended",
-    () => {
-
-        currentSong++;
-
-        if(
-            currentSong >= songs.length
-        ){
-            currentSong = 0;
-        }
-
-        loadSong(currentSong);
-
-        playSong();
-    }
-);
-
-/* FADE IN */
-
-function fadeInVolume(){
-
-    audio.volume = 0;
-
-    let volume = 0;
-
-    const fade = setInterval(() => {
-
-        volume += 0.05;
-
-        if(volume >= 0.85){
-
-            volume = 0.85;
-
-            clearInterval(fade);
-        }
-
-        audio.volume = volume;
-
-    },100);
+tracks[index].classList.add("active");
 
 }
 
-/* AUDIO ANALYSER */
+function formatTime(seconds){
+
+const mins =
+Math.floor(seconds/60);
+
+const secs =
+Math.floor(seconds%60);
+
+return mins + ":" + String(secs).padStart(2,"0");
+
+}
 
 function setupAudio(){
 
-    audioContext =
-    new (
-        window.AudioContext ||
-        window.webkitAudioContext
-    )();
+audioContext =
+new(window.AudioContext||window.webkitAudioContext)();
 
-    analyser =
-    audioContext.createAnalyser();
+analyser =
+audioContext.createAnalyser();
 
-    analyser.fftSize = 256;
+analyser.fftSize = 256;
 
-    source =
-    audioContext
-    .createMediaElementSource(audio);
+source =
+audioContext.createMediaElementSource(audio);
 
-    source.connect(analyser);
+source.connect(analyser);
 
-    analyser.connect(
-        audioContext.destination
-    );
+analyser.connect(audioContext.destination);
 
-    const bufferLength =
-    analyser.frequencyBinCount;
+const bufferLength =
+analyser.frequencyBinCount;
 
-    dataArray =
-    new Uint8Array(bufferLength);
+dataArray =
+new Uint8Array(bufferLength);
+
 }
 
-/* VISUALIZER */
+async function playSong(){
+
+try{
+
+if(!audioContext){
+
+setupAudio();
+
+}
+
+await audioContext.resume();
+
+await audio.play();
+
+fadeInVolume();
+
+isPlaying = true;
+
+playBtn.innerHTML =
+'<i class="fas fa-pause"></i>';
+
+drawVisualizer();
+
+}catch(err){
+
+console.log(err);
+
+}
+
+}
+
+function pauseSong(){
+
+audio.pause();
+
+isPlaying = false;
+
+playBtn.innerHTML =
+'<i class="fas fa-play"></i>';
+
+}
+
+    playBtn.addEventListener("click",()=>{
+
+if(isPlaying){
+
+pauseSong();
+
+}else{
+
+playSong();
+
+}
+
+});
+
+prevBtn.addEventListener("click",()=>{
+
+currentSong--;
+
+if(currentSong<0){
+
+currentSong=songs.length-1;
+
+}
+
+loadSong(currentSong);
+
+playSong();
+
+});
+
+nextBtn.addEventListener("click",()=>{
+
+currentSong++;
+
+if(currentSong>=songs.length){
+
+currentSong=0;
+
+}
+
+loadSong(currentSong);
+
+playSong();
+
+});
+
+tracks.forEach(track=>{
+
+track.addEventListener("click",()=>{
+
+loadSong(Number(track.dataset.index));
+
+playSong();
+
+});
+
+});
+
+audio.addEventListener("timeupdate",()=>{
+
+progressBar.value=
+
+(audio.currentTime/audio.duration)*100||0;
+
+currentTimeDisplay.textContent=
+
+formatTime(audio.currentTime);
+
+durationDisplay.textContent=
+
+formatTime(audio.duration||0);
+
+});
+
+progressBar.addEventListener("input",()=>{
+
+audio.currentTime=
+
+(progressBar.value/100)*audio.duration;
+
+});
+
+audio.addEventListener("ended",()=>{
+
+currentSong++;
+
+if(currentSong>=songs.length){
+
+currentSong=0;
+
+}
+
+loadSong(currentSong);
+
+playSong();
+
+});
+
+function fadeInVolume(){
+
+audio.volume=0;
+
+let volume=0;
+
+const fade=setInterval(()=>{
+
+volume+=0.05;
+
+if(volume>=0.85){
+
+volume=0.85;
+
+clearInterval(fade);
+
+}
+
+audio.volume=volume;
+
+},100);
+
+}
 
 function drawVisualizer(){
 
-    cancelAnimationFrame(
-        animationId
-    );
+cancelAnimationFrame(animationId);
 
-    function animate(){
+function animate(){
 
-        animationId =
-        requestAnimationFrame(
-            animate
-        );
+animationId=requestAnimationFrame(animate);
 
-        analyser
-        .getByteFrequencyData(
-            dataArray
-        );
+analyser.getByteFrequencyData(dataArray);
 
-        ctx.clearRect(
-            0,
-            0,
-            canvas.width,
-            canvas.height
-        );
+ctx.clearRect(0,0,canvas.width,canvas.height);
 
-        const bars = 64;
+const bars=64;
 
-        const barWidth =
-        canvas.width / bars;
+const barWidth=canvas.width/bars;
 
-        for(
-            let i = 0;
-            i < bars;
-            i++
-        ){
+for(let i=0;i<bars;i++){
 
-            const value =
-            dataArray[i];
+const value=dataArray[i];
 
-            const percent =
-            value / 255;
+const percent=value/255;
 
-            const height =
-            canvas.height *
-            percent;
+const height=canvas.height*percent;
 
-            const y =
-            canvas.height -
-            height;
+const y=canvas.height-height;
 
-            const gradient =
-            ctx.createLinearGradient(
-                0,
-                y,
-                0,
-                canvas.height
-            );
+const gradient=ctx.createLinearGradient(
 
-            gradient.addColorStop(0,"#ffffff");
-gradient.addColorStop(0.35,"#ff4d4d");
+0,
+
+y,
+
+0,
+
+canvas.height
+
+);
+
+gradient.addColorStop(0,"#ffffff");
+
+gradient.addColorStop(.35,"#ff4d4d");
+
 gradient.addColorStop(1,"#ff0000");
 
-            ctx.fillStyle =
-            gradient;
+ctx.fillStyle=gradient;
 
-            ctx.shadowBlur = 22;
+ctx.shadowBlur=22;
 
-            ctx.shadowColor =
-            "#ff0000";
+ctx.shadowColor="#ff0000";
 
-            ctx.fillRect(
-                i * barWidth,
-                y,
-                barWidth - 2,
-                height
-            );
-        }
-    }
+ctx.fillRect(
 
-    animate();
+i*barWidth,
+
+y,
+
+barWidth-2,
+
+height
+
+);
+
 }
 
-/* INITIAL SONG */
+}
+
+animate();
+
+}
 
 loadSong(0);
 
-/* AUTOPLAY */
+window.addEventListener("load",async()=>{
 
-window.addEventListener(
-    "load",
-    async () => {
+try{
 
-        try{
+await playSong();
 
-            await playSong();
+}catch(e){}
 
-        }catch(e){}
-    }
-);
+});
 
-/* MOBILE AUTOSTART */
+document.addEventListener("click",async()=>{
 
-document.addEventListener(
-    "click",
-    async () => {
+if(!isPlaying){
 
-        if(!isPlaying){
+await playSong();
 
-            await playSong();
-        }
+}
 
-    },
-    { once:true }
-);
+},{once:true});
 
-        </script>
+</script>
+
+</body>
+
+</html>
+
+    
+    
