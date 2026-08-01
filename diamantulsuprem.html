@@ -1535,10 +1535,6 @@ observer.observe(videoSection);
 
 }
 
-</body>
-
-</html>
-
 /* RESUME MUSIC IF USER RETURNS FROM VIDEO */
 
 document.addEventListener("visibilitychange",()=>{
@@ -1577,8 +1573,6 @@ ctx.clearRect(0,0,canvas.width,canvas.height);
 
 });
 
-/* RESTART VISUALIZER WHEN SONG ENDS */
-
 music.addEventListener("ended",()=>{
 
 if(playing){
@@ -1588,8 +1582,6 @@ drawVisualizer();
 }
 
 });
-
-/* CLOSE ZOOM WITH ESC */
 
 document.addEventListener("keydown",(e)=>{
 
@@ -1601,8 +1593,6 @@ zoomOverlay.style.display="none";
 
 });
 
-/* PREVENT IMAGE DRAG */
-
 document.querySelectorAll("img").forEach(img=>{
 
 img.draggable=false;
@@ -1610,7 +1600,6 @@ img.draggable=false;
 });
 
 </script>
-  </script>
 
 </body>
 
